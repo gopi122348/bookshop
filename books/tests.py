@@ -9,16 +9,16 @@ from .models import Book
 class BookModelTest(TestCase):
     """Unit tests for the Book model."""
 
-    def setUp(self):
-        """Create a sample book used in all model tests."""
-        self.book = Book.objects.create(
-            title='Test Book',
-            author='Test Author',
-            isbn='9780000000001',
-            price=9.99,
-            stock=10,
-            genre='fiction'
-        )
+   def setUp(self):
+    """Create a sample book used in all model tests."""
+    self.book = Book.objects.create(
+        title='Test Book',
+        author='Test Author',
+        isbn='9780000000001',
+        price=9.99,
+        stock=10,
+        genre='fiction'
+    )
 
     def test_book_creation(self):
         """Book is saved with correct attributes."""
