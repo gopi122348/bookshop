@@ -94,7 +94,6 @@ Out of Stock
 
 </div>
 
-
 <div class="card-footer bg-transparent">
 
 <a href="{% url 'book_detail' book.pk %}"
@@ -111,6 +110,15 @@ Edit
 class="btn btn-sm btn-outline-danger">
 Delete
 </a>
+
+<form method="post"
+      action="{% url 'cart_add' book.pk %}"
+      class="d-inline">
+    {% csrf_token %}
+    <button class="btn btn-sm btn-success">
+        + Cart
+    </button>
+</form>
 
 </div>
 

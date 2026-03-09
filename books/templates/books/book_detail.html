@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Price</th>
-                <td>&#163;{{ book.price }}</td>
+                <td>&euro;{{ book.price }}</td>
             </tr>
             <tr>
                 <th>Stock</th>
@@ -38,12 +38,22 @@
                 <td>{{ book.published_date|default:"Unknown" }}</td>
             </tr>
         </table>
-
         <div class="d-flex gap-2">
-            <a href="{% url 'book_update' book.pk %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
-            <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Back</a>
-        </div>
+    <a href="{% url 'book_update' book.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+
+    <!-- ADD: Add to Cart button -->
+    <form method="post" action="{% url 'cart_add' book.pk %}" class="d-inline">
+        {% csrf_token %}
+        <button class="btn btn-success">
+            &#128722; Add to Cart
+        </button>
+    </form>
+
+    <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Back</a>
+</div>
+
+      
 
     </div>
 </div>

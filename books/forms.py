@@ -110,3 +110,59 @@ class BookForm(forms.ModelForm):
             )
 
         return author
+    class CheckoutForm(forms.Form):
+    """Collects delivery details for an order."""
+
+    customer_name = forms.CharField(
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'Full name'
+            }
+        ),
+    )
+
+    customer_email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'email@example.com'
+            }
+        ),
+    )
+
+    customer_phone = forms.CharField(
+        required=False,
+        max_length=20,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'Optional phone number'
+            }
+        ),
+    )
+
+    address = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'class': 'form-control',
+                'rows': 3,
+                'placeholder': 'Delivery address'
+            }
+        ),
+    )
+
+    def clean_customer_name(self):
+        """Name must not be blank or whitespace only."""
+        name = self.cleaned_data.get('customer_name', '').strip()
+        if not name:
+            raise forms.ValidationError('Name cannot be empty.')
+        return name
+
+    def clean_address(self):
+        """Address must not be blank."""
+        addr = self.cleaned_data.get('address', '').strip()
+        if not addr:
+            raise forms.ValidationError('Please enter a delivery address.')
+        return addr

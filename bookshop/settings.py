@@ -107,3 +107,11 @@ MESSAGE_TAGS = {
     msg.WARNING: 'warning',
     msg.ERROR: 'danger',
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://76182235ef3545768bf37adef4c901ff.vfs.cloud9.us-east-1.amazonaws.com'
+]
+# Redirect here after successful login / logout
+LOGIN_REDIRECT_URL  = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL           = '/accounts/login/'

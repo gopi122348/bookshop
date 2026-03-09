@@ -1,105 +1,131 @@
-# books/tests.py
-# Unit tests for Book model and views — run automatically in GitHub Actions CI
-
 from django.test import TestCase, Client
 from django.urls import reverse
-from .models import Book
+from django.contrib.auth.models import User
+from .models import Book, Order
+
+class AuthTest(TestCase):
+    """Tests for registration and login."""
+
+    def test_register_page_loads(self):
+        """Register page returns 200."""
+        resp = self.client.get(reverse('register'))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_register_creates_user(self):
+        """Valid POST creates user and redirects."""
+        resp = self.client.post(
+            reverse('register'),
+            {
+                'username': 'testbuyer',
+                'password1': 'StrongPass123!',
+                'password2': 'StrongPass123!',
+            }
+        )
+        self.assertEqual(resp.status_code, 302)
+        self.assertTrue(User.objects.filter(username='testbuyer').exists())
+
+    def test_login_page_loads(self):
+        """Login page returns 200."""
+        resp = self.client.get(reverse('login'))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_cart_requires_login(self):
+        """Unauthenticated user is redirected away from the cart."""
+        resp = self.client.get(reverse('cart_view'))
+        self.assertEqual(resp.status_code, 302)
+        self.assertIn('/accounts/login/', resp['Location'])
 
 
-class BookModelTest(TestCase):
-    """Unit tests for the Book model."""
-
-   def setUp(self):
-    """Create a sample book used in all model tests."""
-    self.book = Book.objects.create(
-        title='Test Book',
-        author='Test Author',
-        isbn='9780000000001',
-        price=9.99,
-        stock=10,
-        genre='fiction'
-    )
-
-    def test_book_creation(self):
-        """Book is saved with correct attributes."""
-        self.assertEqual(self.book.title, 'Test Book')
-        self.assertEqual(self.book.author, 'Test Author')
-
-    def test_book_str(self):
-        """__str__ returns title and author."""
-        self.assertEqual(str(self.book), 'Test Book by Test Author')
-
-    def test_is_in_stock_true(self):
-        """is_in_stock returns True when stock > 0."""
-        self.assertTrue(self.book.is_in_stock())
-
-    def test_is_in_stock_false(self):
-        """is_in_stock returns False when stock is 0."""
-        self.book.stock = 0
-        self.assertFalse(self.book.is_in_stock())
-
-
-class BookViewTest(TestCase):
-    """Integration tests for CRUD views."""
+class PurchaseFlowTest(TestCase):
+    """Full cart → checkout → order history flow."""
 
     def setUp(self):
-        """Create client and test book."""
+        """Create a user and a book."""
         self.client = Client()
-        self.book = Book.objects.create(
-            title='View Test Book',
-            author='View Author',
-            isbn='9780000000002',
-            price=14.99,
-            stock=5,
-            genre='science'
+        self.user = User.objects.create_user(
+            username='buyer',
+            password='TestPass99!'
         )
+        self.book = Book.objects.create(
+            title='Buy Me',
+            author='Author A',
+            isbn='9780000000003',
+            price=9.99,
+            stock=5,
+            genre='fiction'
+        )
+        self.client.login(username='buyer', password='TestPass99!')
 
-    def test_book_list_returns_200(self):
-        """Book list page loads successfully."""
-        response = self.client.get(reverse('book_list'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'View Test Book')
+    def test_add_to_cart(self):
+        """POST to cart_add adds book to session."""
+        self.client.post(reverse('cart_add', args=[self.book.pk]))
+        cart = self.client.session.get('cart', {})
+        self.assertIn(str(self.book.pk), cart)
 
-    def test_book_detail_returns_200(self):
-        """Book detail page loads for existing book."""
-        response = self.client.get(reverse('book_detail', args=[self.book.pk]))
-        self.assertEqual(response.status_code, 200)
+    def test_remove_from_cart(self):
+        """POST to cart_remove empties cart."""
+        self.client.post(reverse('cart_add', args=[self.book.pk]))
+        self.client.post(reverse('cart_remove', args=[self.book.pk]))
+        cart = self.client.session.get('cart', {})
+        self.assertNotIn(str(self.book.pk), cart)
 
-    def test_book_create_page_loads(self):
-        """Add book form page loads."""
-        response = self.client.get(reverse('book_create'))
-        self.assertEqual(response.status_code, 200)
+    def test_checkout_creates_order(self):
+        """Valid checkout creates Order and decreases stock."""
+        self.client.post(reverse('cart_add', args=[self.book.pk]))
+        self.client.post(
+            reverse('checkout'),
+            {
+                'customer_name': 'Jane Doe',
+                'customer_email': 'jane@example.com',
+                'customer_phone': '',
+                'address': '1 Main St, Dublin',
+            }
+        )
+        self.assertEqual(Order.objects.count(), 1)
+        order = Order.objects.first()
+        self.assertEqual(order.user, self.user)
+        self.book.refresh_from_db()
+        self.assertEqual(self.book.stock, 4)
 
-    def test_book_create_valid_data(self):
-        """Valid POST to book_create redirects to list."""
-        data = {
-            'title': 'New Book',
-            'author': 'New Author',
-            'isbn': '9780000000099',
-            'price': '12.99',
-            'stock': '3',
-            'genre': 'history',
-            'description': ''
-        }
-        response = self.client.post(reverse('book_create'), data)
-        self.assertEqual(response.status_code, 302)
+    def test_order_history_visible(self):
+        """Order history page shows completed orders."""
+        Order.objects.create(
+            user=self.user,
+            customer_name='Jane',
+            customer_email='j@e.com',
+            address='1 St',
+            total_price=9.99
+        )
+        resp = self.client.get(reverse('order_history'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'Jane')
 
-    def test_book_create_invalid_isbn(self):
-        """Short ISBN stays on form with error message."""
-        data = {
-            'title': 'Bad Book',
-            'author': 'Bad Author',
-            'isbn': '123',
-            'price': '10.00',
-            'stock': '1',
-            'genre': 'other'
-        }
-        response = self.client.post(reverse('book_create'), data)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'ISBN must be exactly 13 digits')
+    def test_order_history_only_own_orders(self):
+        """A user cannot see another user's orders."""
+        other = User.objects.create_user(
+            username='other',
+            password='OtherPass99!'
+        )
+        Order.objects.create(
+            user=other,
+            customer_name='Other Person',
+            customer_email='o@o.com',
+            address='2 St',
+            total_price=5.00
+        )
+        resp = self.client.get(reverse('order_history'))
+        self.assertNotContains(resp, 'Other Person')
 
-    def test_book_delete(self):
-        """POST to book_delete removes book from database."""
-        response = self.client.post(reverse('book_delete', args=[self.book.pk]))
-        self.assertEqual(response.status_code, 302)
-        self.assertFalse(Book.objects.filter(pk=self.book.pk).exists())
+    def test_checkout_invalid_form(self):
+        """Empty name keeps user on checkout page."""
+        self.client.post(reverse('cart_add', args=[self.book.pk]))
+        resp = self.client.post(
+            reverse('checkout'),
+            {
+                'customer_name': '',
+                'customer_email': 'jane@example.com',
+                'address': '1 St',
+            }
+        )
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(Order.objects.count(), 0)

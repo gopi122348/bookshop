@@ -1,0 +1,51 @@
+{% extends 'books/base.html' %}
+{% block title %}Order Confirmed{% endblock %}
+{% block content %}
+<div class='card border-success shadow-sm'>
+ <div class='card-header bg-success text-white'>
+  <h4>&#9989; Order Confirmed!</h4>
+ </div>
+ <div class='card-body'>
+  <p class='fs-5'>Thank you,
+   <strong>{{ order.customer_name }}</strong>!</p>
+  <p>Reference: <strong>#{{ order.pk }}</strong>.
+   Confirmation sent to {{ order.customer_email }}.
+  </p>
+  <h5 class='mt-4'>Items Ordered</h5>
+  <table class='table table-sm table-bordered'>
+   <thead class='table-secondary'>
+    <tr>
+     <th>Book</th><th>Qty</th><th>Subtotal</th>
+    </tr>
+   </thead>
+   <tbody>
+   {% for item in order.items.all %}
+    <tr>
+     <td>{{ item.book.title }}</td>
+     <td>{{ item.quantity }}</td>
+     <td>&#163;{{ item.subtotal }}</td>
+    </tr>
+   {% endfor %}
+   </tbody>
+   <tfoot>
+    <tr>
+     <td colspan='2'
+         class='text-end fw-bold'>Total</td>
+     <td class='fw-bold'>
+      &#163;{{ order.total_price }}
+     </td>
+    </tr>
+   </tfoot>
+  </table>
+  <a href='{% url "order_history" %}'
+     class='btn btn-primary'>
+   My Orders
+  </a>
+  <a href='{% url "book_list" %}'
+     class='btn btn-outline-secondary ms-2'>
+   Continue Shopping
+  </a>
+ </div>
+</div>
+{% endblock %}
+

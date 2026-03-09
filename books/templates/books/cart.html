@@ -1,0 +1,72 @@
+{% extends 'books/base.html' %}
+
+{% block title %}
+Your Cart
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">🛒 Your Cart</h2>
+
+{% if items %}
+
+<table class="table table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Book</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>&#163;{{ item.price }}</td>
+            <td>{{ item.qty }}</td>
+            <td>&#163;{{ item.subtotal }}</td>
+
+            <td>
+                <form method="post" action="{% url 'cart_remove' item.book_id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-sm btn-outline-danger">
+                        Remove
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-end fw-bold">Total</td>
+            <td class="fw-bold">&#163;{{ total }}</td>
+            <td></td>
+        </tr>
+    </tfoot>
+
+</table>
+
+<a href="{% url 'checkout' %}" class="btn btn-success btn-lg">
+    Proceed to Checkout
+</a>
+
+<a href="{% url 'book_list' %}" class="btn btn-outline-secondary ms-2">
+    Continue Shopping
+</a>
+
+{% else %}
+
+<div class="alert alert-info">
+    Your cart is empty.
+    <a href="{% url 'book_list' %}">Browse books</a>
+</div>
+
+{% endif %}
+
+{% endblock %}

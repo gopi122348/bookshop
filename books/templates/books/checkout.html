@@ -1,0 +1,66 @@
+{% extends 'books/base.html' %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<div class='row'>
+ <div class='col-md-7'>
+  <div class='card shadow-sm'>
+   <div class='card-header bg-dark text-white'>
+    <h4>Delivery Details</h4>
+   </div>
+   <div class='card-body'>
+    <form method='post' novalidate>
+     {% csrf_token %}
+     {% for field in form %}
+     <div class='mb-3'>
+      <label class='form-label fw-bold'>
+       {{ field.label }}
+      </label>
+      {{ field }}
+      {% for error in field.errors %}
+      <div class='text-danger small'>
+       &#10007; {{ error }}
+      </div>
+      {% endfor %}
+     </div>
+     {% endfor %}
+     <button type='submit'
+             class='btn btn-success btn-lg w-100'>
+      &#9989; Place Order
+     </button>
+    </form>
+   </div>
+  </div>
+ </div>
+ <div class='col-md-5'>
+  <div class='card shadow-sm'>
+   <div class='card-header bg-secondary text-white'>
+    <h5>Order Summary</h5>
+   </div>
+   <ul class='list-group list-group-flush'>
+   {% for item in items %}
+    <li class='list-group-item
+               d-flex justify-content-between'>
+     <span>{{ item.title }}
+      <small class='text-muted'>
+       &times; {{ item.qty }}
+      </small>
+     </span>
+     <strong>&#163;{{ item.subtotal }}</strong>
+    </li>
+   {% endfor %}
+   <li class='list-group-item d-flex
+              justify-content-between
+              bg-light fw-bold'>
+    <span>Total</span>
+    <span>&#163;{{ total }}</span>
+   </li>
+   </ul>
+  </div>
+  <a href='{% url "cart_view" %}'
+     class='btn btn-outline-secondary mt-2 w-100'>
+   &#8592; Edit Cart
+  </a>
+ </div>
+</div>
+{% endblock %}
+
