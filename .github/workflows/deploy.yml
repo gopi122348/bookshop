@@ -62,7 +62,7 @@ jobs:
         run: pip install awsebcli
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -71,5 +71,6 @@ jobs:
 
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb init bookshop -p python-3.11 --region us-east-1
-          eb deploy bookshop-env
+          eb init bookshop -p python-3.11 --region us-east-1 --no interactive
+          eb use bookshop-env
+          eb deploy bookshop-env --timeout 20
