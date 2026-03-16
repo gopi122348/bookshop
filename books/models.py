@@ -6,8 +6,6 @@ from django.utils import timezone
 
 
 class Book(models.Model):
-    """Represents a book in the online bookshop with full CRUD support."""
-
     GENRE_CHOICES = [
         ('fiction', 'Fiction'),
         ('non_fiction', 'Non-Fiction'),
@@ -49,20 +47,19 @@ class Book(models.Model):
     published_date = models.DateField(null=True, blank=True)
 
     created_at = models.DateTimeField(default=timezone.now)
-
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['title']
 
     def __str__(self):
-        """Return readable representation of the book."""
-        return f"{self.title} by {self.author}"
+        return f"{self.title} by {self.author}"      #for readable representation
 
     def is_in_stock(self):
-        """Return True if at least one copy is available."""
-        return self.stock > 0
-    class Order(models.Model):
+        return self.stock > 0                        #for checking availability    
+
+
+class Order(models.Model):
     """A customer order, always linked to a registered user."""
 
     STATUS_CHOICES = [
@@ -76,9 +73,18 @@ class Book(models.Model):
         on_delete=models.CASCADE,
         related_name='orders'
     )
-    customer_name = models.CharField(max_length=100)
+
+    customer_name = models.CharField(
+        max_length=100
+    )
+
     customer_email = models.EmailField()
-    customer_phone = models.CharField(max_length=20, blank=True)
+
+    customer_phone = models.CharField(
+        max_length=20,
+        blank=True
+    )
+
     address = models.TextField()
 
     status = models.CharField(
@@ -93,7 +99,9 @@ class Book(models.Model):
         default=0
     )
 
-    created_at = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(
+        default=timezone.now
+    )
 
     class Meta:
         ordering = ['-created_at']
@@ -103,7 +111,6 @@ class Book(models.Model):
 
 
 class OrderItem(models.Model):
-    """One line in an order: one book type + quantity."""
 
     order = models.ForeignKey(
         Order,
@@ -127,5 +134,4 @@ class OrderItem(models.Model):
         return f'{self.quantity}x {self.book.title}'
 
     def subtotal(self):
-        """Price multiplied by quantity for this line."""
         return self.price * self.quantity
