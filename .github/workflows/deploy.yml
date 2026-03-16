@@ -74,3 +74,7 @@ jobs:
           eb init bookshop -p python-3.11 --region us-east-1 --no interactive
           eb use bookshop-env
           eb deploy bookshop-env --timeout 20
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
