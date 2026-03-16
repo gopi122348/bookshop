@@ -6,6 +6,8 @@ from django.utils import timezone
 
 
 class Book(models.Model):
+    """A book available in the bookshop."""
+
     GENRE_CHOICES = [
         ('fiction', 'Fiction'),
         ('non_fiction', 'Non-Fiction'),
@@ -44,19 +46,27 @@ class Book(models.Model):
 
     description = models.TextField(blank=True)
 
-    published_date = models.DateField(null=True, blank=True)
+    published_date = models.DateField(
+        null=True,
+        blank=True
+    )
 
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(
+        default=timezone.now
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
 
     class Meta:
         ordering = ['title']
 
     def __str__(self):
-        return f"{self.title} by {self.author}"      #for readable representation
+        return f"{self.title} by {self.author}"
 
     def is_in_stock(self):
-        return self.stock > 0                        #for checking availability    
+        return self.stock > 0
 
 
 class Order(models.Model):
@@ -74,17 +84,9 @@ class Order(models.Model):
         related_name='orders'
     )
 
-    customer_name = models.CharField(
-        max_length=100
-    )
-
+    customer_name = models.CharField(max_length=100)
     customer_email = models.EmailField()
-
-    customer_phone = models.CharField(
-        max_length=20,
-        blank=True
-    )
-
+    customer_phone = models.CharField(max_length=20, blank=True)
     address = models.TextField()
 
     status = models.CharField(
@@ -107,10 +109,11 @@ class Order(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f'Order #{self.pk} — {self.customer_name}'
+        return f"Order #{self.pk} - {self.customer_name}"
 
 
 class OrderItem(models.Model):
+    """A single book line item within an order."""
 
     order = models.ForeignKey(
         Order,
@@ -131,7 +134,7 @@ class OrderItem(models.Model):
     )
 
     def __str__(self):
-        return f'{self.quantity}x {self.book.title}'
+        return f"{self.quantity}x {self.book.title}"
 
     def subtotal(self):
         return self.price * self.quantity
