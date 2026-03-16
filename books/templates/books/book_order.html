@@ -1,0 +1,39 @@
+{% extends 'books/base.html' %}
+{% block title %}Order {{ book.title }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white">
+        <h4>Order Book</h4>
+      </div>
+      <div class="card-body">
+        <h5>{{ book.title }}</h5>
+        <p class="text-muted">by {{ book.author }}</p>
+        <p><strong>Price:</strong> £{{ book.price }}</p>
+        <p><strong>In Stock:</strong> {{ book.stock }} copies</p>
+        <hr>
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label class="form-label fw-bold">Quantity</label>
+            {{ form.quantity }}
+            {% if form.quantity.errors %}
+              {% for error in form.quantity.errors %}
+                <div class="text-danger mt-1">✗ {{ error }}</div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-success">
+              Place Order
+            </button>
+            <a href="{% url 'book_list' %}" 
+               class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

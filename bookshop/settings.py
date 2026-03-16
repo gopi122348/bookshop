@@ -1,6 +1,3 @@
-# bookshop/settings.py
-# Production-ready settings for AWS Elastic Beanstalk
-
 import os
 from pathlib import Path
 
