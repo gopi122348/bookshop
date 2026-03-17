@@ -69,7 +69,6 @@ jobs:
 
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb init bookshop -p python-3.11 --region us-east-1
           eb use bookshop-env
           eb deploy bookshop-env --timeout 20
       - name: Run pytest
