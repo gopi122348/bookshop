@@ -47,12 +47,17 @@ jobs:
         run: bandit -r books/ -f txt
         continue-on-error: true
 
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v2
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
+        with:
+          args: >
+            -Dsonar.projectKey=bookshop
+            -Dsonar.organization=your-org-key
+            -Dsonar.sources=books
+            -Dsonar.python.version=3.11
+            -Dsonar.qualitygate.wait=true
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to AWS Elastic Beanstalk
