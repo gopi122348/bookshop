@@ -57,7 +57,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=bookshop
+            -Dsonar.projectKey=gopi122348_bookshop
             -Dsonar.organization=gopi122348
             -Dsonar.sources=books
             -Dsonar.python.version=3.11
