@@ -69,7 +69,16 @@ jobs:
 
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb use bookshop-env
+          mkdir -p .elasticbeanstalk
+          cat > .elasticbeanstalk/config.yml << 'EBEOF'
+          branch-defaults:
+            main:
+              environment: bookshop-env
+          global:
+            application_name: bookshop
+            default_region: us-east-1
+            sc: git
+          EBEOF
           eb deploy bookshop-env --timeout 20
       - name: Run pytest
         run: pytest books/tests.py -v
