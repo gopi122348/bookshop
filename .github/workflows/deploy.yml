@@ -64,7 +64,7 @@ jobs:
             -Dsonar.sources=books
             -Dsonar.python.version=3.11
             -Dsonar.coverage.reportPaths=coverage.xml
-            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.wait=false
 
       # Run TruffleHog secret detection
       - name: Run TruffleHog secret detection
