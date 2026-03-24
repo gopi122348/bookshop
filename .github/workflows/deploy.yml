@@ -2,14 +2,16 @@ name: CI/CD Pipeline - Django Bookshop
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest
     name: Run Tests, Linting, Coverage, and SonarCloud
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout the code
@@ -20,7 +22,7 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # Install dependencies
       - name: Install dependencies
@@ -63,6 +65,8 @@ jobs:
             -Dsonar.python.version=3.11
             -Dsonar.coverage.reportPaths=coverage.xml
             -Dsonar.qualitygate.wait=true
+
+      # Run TruffleHog secret detection
       - name: Run TruffleHog secret detection
         uses: trufflesecurity/trufflehog@main
         with:
@@ -72,6 +76,7 @@ jobs:
           extra_args: --only-verified
         continue-on-error: true
 
+      # Run Safety dependency check
       - name: Run Safety dependency check
         run: |
           pip install safety
@@ -79,8 +84,8 @@ jobs:
         continue-on-error: true
 
   deploy:
-    runs-on: ubuntu-latest
     name: Deploy to AWS Elastic Beanstalk
+    runs-on: ubuntu-latest
     needs: test
     if: github.ref == 'refs/heads/main'
 
@@ -93,7 +98,7 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # Install EB CLI
       - name: Install AWS EB CLI
@@ -122,4 +127,3 @@ jobs:
             sc: git
           EBEOF
           eb deploy bookshop-env --timeout 20
-    
