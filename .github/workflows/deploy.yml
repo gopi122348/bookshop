@@ -108,3 +108,11 @@ jobs:
             sc: git
           EBEOF
           eb deploy bookshop-env --timeout 20
+      - name: Run Bandit (Security Scan)
+        run: |
+          pip install bandit
+          bandit -r .
+      - name: Run Safety (Dependency Check)
+        run: |
+          pip install safety
+          safety check
