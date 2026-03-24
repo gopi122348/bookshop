@@ -14,59 +14,52 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
       - name: Checkout source code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      # Setup Python
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
 
-      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install coverage pytest pytest-django pylint
 
-      # Run Django unit tests
       - name: Run Django unit tests
         run: python manage.py test
 
-      # Run pytest directly
       - name: Run pytest
         run: pytest books/tests.py -v
         env:
           DJANGO_SETTINGS_MODULE: bookshop.settings
 
-      # Run pylint
       - name: Run pylint
         run: pylint books/ --output-format=text --fail-under=5.0
         continue-on-error: true
 
-      # Run tests with coverage and generate XML report
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
           coverage xml
 
-      # SonarCloud analysis
       - name: SonarCloud Scan
         uses: sonarsource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=bookshop
+            -Dsonar.projectKey=gopi122348_bookshop
             -Dsonar.organization=gopi122348
             -Dsonar.sources=books
             -Dsonar.python.version=3.11
             -Dsonar.coverage.reportPaths=coverage.xml
             -Dsonar.qualitygate.wait=false
 
-      # Run TruffleHog secret detection
       - name: Run TruffleHog secret detection
         uses: trufflesecurity/trufflehog@main
         with:
@@ -76,7 +69,6 @@ jobs:
           extra_args: --only-verified
         continue-on-error: true
 
-      # Run Safety dependency check
       - name: Run Safety dependency check
         run: |
           pip install safety
@@ -90,21 +82,17 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      # Checkout the code
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      # Setup Python
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
 
-      # Install EB CLI
       - name: Install AWS EB CLI
         run: pip install awsebcli
 
-      # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -113,7 +101,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
-      # Deploy to Elastic Beanstalk
       - name: Deploy to Elastic Beanstalk
         run: |
           mkdir -p .elasticbeanstalk
