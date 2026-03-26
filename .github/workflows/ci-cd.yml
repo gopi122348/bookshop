@@ -44,7 +44,7 @@ jobs:
         run: pylint books/ --output-format=text --fail-under=5.0
         continue-on-error: true
 
-      # Run tests with coverage and generate XML report
+      #   Run tests with coverage and generate XML report
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
