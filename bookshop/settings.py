@@ -7,7 +7,16 @@ try:
 except ImportError:
     pass
 
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Secret key loaded from environment — never hardcoded
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-dev-key-only')
@@ -59,10 +68,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookshop.wsgi.application'
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # stores it in /var/app/current/
     }
 }
 
