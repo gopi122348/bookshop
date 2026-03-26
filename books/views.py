@@ -213,6 +213,48 @@ def book_order(request, pk):
 @login_required
 def cart_add(request, pk):
     book = get_object_or_404(Book, pk=pk)
-    # cart logic here
+    cart = request.session.get('cart', {})
+    book_id = str(pk)
+    if book_id in cart:
+        cart[book_id] += 1
+    else:
+        cart[book_id] = 1
+    request.session['cart'] = cart
     messages.success(request, f'"{book.title}" added to cart!')
-    return redirect('book_detail', pk=pk)    
+    return redirect('book_detail', pk=pk)
+
+
+@login_required
+def cart_view(request):
+    cart = request.session.get('cart', {})
+    items = []
+    total = 0
+    for book_id, qty in cart.items():
+        try:
+            book = Book.objects.get(pk=book_id)
+            subtotal = book.price * qty
+            total += subtotal
+            items.append({
+                'book_id': book_id,
+                'title': book.title,
+                'price': book.price,
+                'qty': qty,
+                'subtotal': subtotal,
+            })
+        except Book.DoesNotExist:
+            pass
+    return render(request, 'books/cart.html', {'items': items, 'total': total})
+
+
+@login_required
+def cart_remove(request, pk):
+    cart = request.session.get('cart', {})
+    cart.pop(str(pk), None)
+    request.session['cart'] = cart
+    return redirect('cart')
+
+
+@login_required
+def order_history(request):
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+    return render(request, 'books/order_history.html', {'orders': orders})
