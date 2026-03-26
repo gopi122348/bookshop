@@ -68,7 +68,6 @@ def book_create(request):
             return redirect("book_list")
 
         messages.error(request, "Please correct the errors below.")
-
     else:
         form = BookForm()
 
@@ -95,7 +94,6 @@ def book_update(request, pk):
             return redirect("book_list")
 
         messages.error(request, "Please correct the errors below.")
-
     else:
         form = BookForm(instance=book)
 
@@ -116,7 +114,6 @@ def book_delete(request, pk):
     if request.method == "POST":
         title = book.title
         book.delete()
-
         messages.success(request, f'Book "{title}" deleted.')
         return redirect("book_list")
 
@@ -138,7 +135,6 @@ def register(request):
             return redirect("login")
 
         messages.error(request, "Please correct the errors below.")
-
     else:
         form = UserCreationForm()
 
@@ -165,7 +161,6 @@ def book_order(request, pk):
                     request,
                     f"Only {book.stock} copies available."
                 )
-
                 return render(
                     request,
                     "books/book_order.html",
@@ -198,7 +193,6 @@ def book_order(request, pk):
             )
 
             return redirect("book_list")
-
     else:
         form = OrderForm()
 
@@ -210,51 +204,109 @@ def book_order(request, pk):
             "book": book,
         },
     )
+
+
 @login_required
 def cart_add(request, pk):
     book = get_object_or_404(Book, pk=pk)
-    cart = request.session.get('cart', {})
+    cart = request.session.get("cart", {})
     book_id = str(pk)
+
     if book_id in cart:
         cart[book_id] += 1
     else:
         cart[book_id] = 1
-    request.session['cart'] = cart
+
+    request.session["cart"] = cart
     messages.success(request, f'"{book.title}" added to cart!')
-    return redirect('book_detail', pk=pk)
+    return redirect("book_detail", pk=pk)
 
 
 @login_required
 def cart_view(request):
-    cart = request.session.get('cart', {})
+    cart = request.session.get("cart", {})
     items = []
     total = 0
+
     for book_id, qty in cart.items():
         try:
             book = Book.objects.get(pk=book_id)
             subtotal = book.price * qty
             total += subtotal
-            items.append({
-                'book_id': book_id,
-                'title': book.title,
-                'price': book.price,
-                'qty': qty,
-                'subtotal': subtotal,
-            })
+
+            items.append(
+                {
+                    "book_id": book_id,
+                    "title": book.title,
+                    "price": book.price,
+                    "qty": qty,
+                    "subtotal": subtotal,
+                }
+            )
         except Book.DoesNotExist:
             pass
-    return render(request, 'books/cart.html', {'items': items, 'total': total})
+
+    return render(
+        request,
+        "books/cart.html",
+        {"items": items, "total": total},
+    )
 
 
 @login_required
 def cart_remove(request, pk):
-    cart = request.session.get('cart', {})
+    cart = request.session.get("cart", {})
     cart.pop(str(pk), None)
-    request.session['cart'] = cart
-    return redirect('cart')
+    request.session["cart"] = cart
+    return redirect("cart")
 
 
 @login_required
 def order_history(request):
-    orders = Order.objects.filter(user=request.user).order_by('-created_at')
-    return render(request, 'books/order_history.html', {'orders': orders})
+    orders = Order.objects.filter(user=request.user).order_by("-created_at")
+
+    return render(
+        request,
+        "books/order_history.html",
+        {"orders": orders},
+    )
+
+
+@login_required
+def checkout(request):
+    cart = request.session.get("cart", {})
+
+    if not cart:
+        messages.error(request, "Your cart is empty.")
+        return redirect("cart")
+
+    for book_id, qty in cart.items():
+        book = get_object_or_404(Book, pk=book_id)
+
+        if qty > book.stock:
+            messages.error(
+                request,
+                f'Only {book.stock} copies of "{book.title}" available.'
+            )
+            return redirect("cart")
+
+        order = Order.objects.create(
+            user=request.user,
+            customer_name=request.user.username,
+            total_price=book.price * qty,
+            status="pending",
+        )
+
+        OrderItem.objects.create(
+            order=order,
+            book=book,
+            quantity=qty,
+            price=book.price,
+        )
+
+        book.stock -= qty
+        book.save()
+
+    request.session["cart"] = {}
+    messages.success(request, "Order placed successfully!")
+    return redirect("order_history")
