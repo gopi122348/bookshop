@@ -7,25 +7,13 @@ try:
 except ImportError:
     pass
 
-
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# Secret key loaded from environment — never hardcoded
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-dev-key-only')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost',
-    '127.0.0.1',
-    '.elasticbeanstalk.com',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.elasticbeanstalk.com', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,48 +56,33 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookshop.wsgi.application'
 
-import os
-
+# Database — using /tmp so it is writable on Elastic Beanstalk
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # stores it in /var/app/current/
+        'NAME': '/tmp/db.sqlite3',
     }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Europe/Dublin'
-
 USE_I18N = True
-
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 from django.contrib.messages import constants as msg
-
 MESSAGE_TAGS = {
     msg.DEBUG: 'secondary',
     msg.INFO: 'info',
@@ -119,9 +92,10 @@ MESSAGE_TAGS = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://76182235ef3545768bf37adef4c901ff.vfs.cloud9.us-east-1.amazonaws.com'
+    'https://76182235ef3545768bf37adef4c901ff.vfs.cloud9.us-east-1.amazonaws.com',
+    'http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com',
 ]
-# Redirect here after successful login / logout
+
 LOGIN_REDIRECT_URL  = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL           = '/accounts/login/'
