@@ -1,13 +1,9 @@
 {% extends 'books/base.html' %}
-
 {% block title %}All Books{% endblock %}
-
 {% block content %}
-
 <div class="d-flex justify-content-between align-items-center mb-3">
   <h2>All Books <span class="badge bg-secondary">{{ total_count }}</span></h2>
 </div>
-
 <form method="get" class="row g-2 mb-4">
   <div class="col-md-6">
     <input type="text" name="q" class="form-control"
@@ -31,7 +27,6 @@
   </div>
   {% endif %}
 </form>
-
 {% if books %}
 <div class="row">
   {% for book in books %}
@@ -52,6 +47,8 @@
       </div>
       <div class="card-footer bg-transparent">
         <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-outline-primary">View</a>
+        <a href="{% url 'cart_add' book.pk %}" class="btn btn-sm btn-success">🛒 Add to Cart</a>
+        <a href="{% url 'book_order' book.pk %}" class="btn btn-sm btn-warning">⚡ Buy Now</a>
         <a href="{% url 'book_update' book.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
         <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
       </div>
@@ -64,9 +61,7 @@
   No books found. <a href="{% url 'book_create' %}">Add the first one!</a>
 </div>
 {% endif %}
-
 <hr>
-
 {% if recommended_books %}
 <div class="mb-5 mt-4">
   <h3 class="mb-3">⭐ Recommended Books</h3>
@@ -85,20 +80,14 @@
           <p class="text-success">🛒 {{ book.total_sold }} copies sold</p>
         </div>
         <div class="card-footer bg-transparent">
-    <a href="{% url 'book_detail' book.pk %}" 
-       class="btn btn-sm btn-outline-primary">View</a>
-    <a href="{% url 'cart_add' book.pk %}" 
-       class="btn btn-sm btn-success">🛒 Add to Cart</a>
-    <a href="{% url 'book_order' book.pk %}" 
-       class="btn btn-sm btn-warning">⚡ Buy Now</a>
-    <a href="{% url 'book_update' book.pk %}" 
-       class="btn btn-sm btn-outline-secondary">Edit</a>
-    <a href="{% url 'book_delete' book.pk %}" 
-       class="btn btn-sm btn-outline-danger">Delete</a>
-</div>
+          <a href="{% url 'cart_add' book.pk %}" class="btn btn-sm btn-success">🛒 Add to Cart</a>
+          <a href="{% url 'book_order' book.pk %}" class="btn btn-sm btn-warning">⚡ Buy Now</a>
+          <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-outline-primary">View</a>
+        </div>
+      </div>
+    </div>
     {% endfor %}
   </div>
 </div>
 {% endif %}
-
 {% endblock %}
