@@ -85,19 +85,16 @@
           <p class="text-success">🛒 {{ book.total_sold }} copies sold</p>
         </div>
         <div class="card-footer bg-transparent">
-    <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-outline-primary">View</a>
-    {% if user.is_authenticated %}
-        {% if book.is_in_stock %}
-            <a href="{% url 'cart_add' book.pk %}" class="btn btn-sm btn-success">🛒 Add to Cart</a>
-            <a href="{% url 'book_order' book.pk %}" class="btn btn-sm btn-warning">⚡ Buy Now</a>
-        {% else %}
-            <span class="btn btn-sm btn-secondary disabled">Out of Stock</span>
-        {% endif %}
-    {% endif %}
-    {% if user.is_staff %}
-        <a href="{% url 'book_update' book.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
-        <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
-    {% endif %}
+    <a href="{% url 'book_detail' book.pk %}" 
+       class="btn btn-sm btn-outline-primary">View</a>
+    <a href="{% url 'cart_add' book.pk %}" 
+       class="btn btn-sm btn-success">🛒 Add to Cart</a>
+    <a href="{% url 'book_order' book.pk %}" 
+       class="btn btn-sm btn-warning">⚡ Buy Now</a>
+    <a href="{% url 'book_update' book.pk %}" 
+       class="btn btn-sm btn-outline-secondary">Edit</a>
+    <a href="{% url 'book_delete' book.pk %}" 
+       class="btn btn-sm btn-outline-danger">Delete</a>
 </div>
     {% endfor %}
   </div>
