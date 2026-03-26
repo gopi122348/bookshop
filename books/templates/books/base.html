@@ -40,11 +40,14 @@ body {
     
 
     {% if user.is_authenticated %}
-        <span class="nav-link text-secondary">{{ user.username }}</span>
-        <a class="nav-link btn btn-outline-light text-white ms-2 px-3" href="{% url 'logout' %}">Log Out</a>
+    <span class="nav-link text-secondary">{{ user.username }}</span>
+    <a class="nav-link text-white" href="{% url 'cart' %}">
+        🛒 Cart
+    </a>
+    <a class="nav-link btn btn-outline-light text-white ms-2 px-3" href="{% url 'logout' %}">Log Out</a>
     {% else %}
-        <a class="nav-link text-white" href="{% url 'login' %}">Log In</a>
-        <a class="nav-link btn btn-success text-white ms-2 px-3" href="{% url 'book_create' %}">+ Add Book</a>
+    <a class="nav-link text-white" href="{% url 'login' %}">Log In</a>
+    <a class="nav-link btn btn-success text-white ms-2 px-3" href="{% url 'book_create' %}">+ Add Book</a>
     {% endif %}
 </div>
 
