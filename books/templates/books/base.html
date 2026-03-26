@@ -30,6 +30,12 @@ body {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
 <div class="container">
+{% if user.is_authenticated %}
+    <span class="nav-link text-secondary">{{ user.username }}</span>
+    <a class="nav-link text-white" href="{% url 'cart' %}">🛒 Cart</a>
+    <a class="nav-link text-white" href="{% url 'order_history' %}">📦 Orders</a>
+    <a class="nav-link btn btn-outline-light text-white ms-2 px-3" href="{% url 'logout' %}">Log Out</a>
+{% endif %}
 
 <a class="navbar-brand" href="{% url 'book_list' %}">
 📚 BookShop

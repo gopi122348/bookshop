@@ -310,3 +310,33 @@ def checkout(request):
     request.session["cart"] = {}
     messages.success(request, "Order placed successfully!")
     return redirect("order_history")
+@login_required
+def checkout(request):
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, "Your cart is empty.")
+        return redirect('cart')
+
+    for book_id, qty in cart.items():
+        book = get_object_or_404(Book, pk=int(book_id))
+        if qty > book.stock:
+            messages.error(request, f'Only {book.stock} copies of "{book.title}" available.')
+            return redirect('cart')
+        order = Order.objects.create(
+            user=request.user,
+            customer_name=request.user.username,
+            total_price=book.price * qty,
+            status='pending',
+        )
+        OrderItem.objects.create(
+            order=order,
+            book=book,
+            quantity=qty,
+            price=book.price,
+        )
+        book.stock -= qty
+        book.save()
+
+    request.session['cart'] = {}
+    messages.success(request, "🎉 Order placed successfully!")
+    return redirect('order_history')
