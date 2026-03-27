@@ -2,9 +2,9 @@ name: CI/CD Pipeline - Django Bookshop
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # Install dependencies
       - name: Install dependencies
@@ -31,12 +31,12 @@ jobs:
 
       # Run Django unit tests
       - name: Run Django unit tests
-          run: python manage.py test
-          env:
-            DJANGO_SETTINGS_MODULE: bookshop.settings
-            DATABASE_URL: sqlite:///test_db.sqlite3
-            SECRET_KEY: django-insecure-ci-test-key-123
-            DEBUG: "True"
+        run: python manage.py test
+        env:
+          DJANGO_SETTINGS_MODULE: bookshop.settings
+          DATABASE_URL: sqlite:///test_db.sqlite3
+          SECRET_KEY: django-insecure-ci-test-key-123
+          DEBUG: "True"
 
       # Run pytest directly
       - name: Run pytest
@@ -49,7 +49,7 @@ jobs:
         run: pylint books/ --output-format=text --fail-under=5.0
         continue-on-error: true
 
-      #   Run tests with coverage and generate XML report
+      # Run tests with coverage and generate XML report
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
@@ -68,6 +68,7 @@ jobs:
             -Dsonar.python.version=3.11
             -Dsonar.coverage.reportPaths=coverage.xml
             -Dsonar.qualitygate.wait=true
+
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to AWS Elastic Beanstalk
@@ -83,7 +84,7 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # Install EB CLI
       - name: Install AWS EB CLI
