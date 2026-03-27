@@ -57,7 +57,7 @@ jobs:
 
       # SonarCloud analysis
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
@@ -79,7 +79,8 @@ jobs:
       # Checkout the code
       - name: Checkout source code
         uses: actions/checkout@v3
-
+        with:
+          fetch-depth: 0
       # Setup Python
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
