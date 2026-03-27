@@ -60,16 +60,16 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
-    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  with:
-    args: >
-      -Dsonar.projectKey=gopi122348_bookshop
-      -Dsonar.organization=gopi122348
-      -Dsonar.sources=books
-      -Dsonar.tests=books
-      -Dsonar.python.version=3.11
-      -Dsonar.coverage.reportPaths=coverage.xml
-      -Dsonar.qualitygate.wait=true
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=gopi122348_bookshop
+            -Dsonar.organization=gopi122348
+            -Dsonar.sources=books
+            -Dsonar.tests=books
+            -Dsonar.python.version=3.11
+            -Dsonar.coverage.reportPaths=coverage.xml
+            -Dsonar.qualitygate.wait=true
 
   deploy:
     runs-on: ubuntu-latest
@@ -83,6 +83,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       # Setup Python
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
