@@ -52,22 +52,24 @@ jobs:
       # Run tests with coverage and generate XML report
       - name: Run tests with coverage
         run: |
-          coverage run -m pytest
+          coverage run -m pytest books
+          coverage report
           coverage xml
 
       # SonarCloud analysis
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=gopi122348_bookshop
-            -Dsonar.organization=gopi122348
-            -Dsonar.sources=books
-            -Dsonar.python.version=3.11
-            -Dsonar.coverage.reportPaths=coverage.xml
-            -Dsonar.qualitygate.wait=true
+  uses: SonarSource/sonarqube-scan-action@v6
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  with:
+    args: >
+      -Dsonar.projectKey=gopi122348_bookshop
+      -Dsonar.organization=gopi122348
+      -Dsonar.sources=books
+      -Dsonar.tests=books
+      -Dsonar.python.version=3.11
+      -Dsonar.coverage.reportPaths=coverage.xml
+      -Dsonar.qualitygate.wait=true
 
   deploy:
     runs-on: ubuntu-latest
