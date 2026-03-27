@@ -1,1 +1,1 @@
-web: python -c "import sqlite3, os; db=os.environ.get('DB_PATH','/var/app/current/db.sqlite3'); conn=sqlite3.connect(db); conn.execute('DROP TABLE IF EXISTS books_order'); conn.execute('DROP TABLE IF EXISTS books_orderitem'); conn.commit(); conn.close()" && python manage.py migrate --noinput && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000
+web: python cleanup_db.py && python manage.py migrate --noinput && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000
