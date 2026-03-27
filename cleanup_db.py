@@ -1,5 +1,5 @@
 import sqlite3, os
-db = '/var/app/current/db.sqlite3'
+db = '/tmp/db.sqlite3'
 if os.path.exists(db):
     conn = sqlite3.connect(db)
     conn.execute('DROP TABLE IF EXISTS books_order')

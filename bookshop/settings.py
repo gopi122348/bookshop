@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -56,13 +55,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookshop.wsgi.application'
 
-# Database — using /tmp so it is writable on Elastic Beanstalk
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '/tmp/db.sqlite3',
     }
 }
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -95,7 +94,6 @@ CSRF_TRUSTED_ORIGINS = [
     'http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com',
 ]
 
-LOGIN_REDIRECT_URL  = '/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL           = '/accounts/login/'
-print("DB PATH:", os.path.abspath("db.sqlite3"))
+LOGIN_URL = '/accounts/login/'
