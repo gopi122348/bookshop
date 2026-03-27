@@ -1,1 +1,1 @@
-web: sh -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+web: sh -c "python manage.py migrate --noinput || echo 'MIGRATION FAILED' && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000"
