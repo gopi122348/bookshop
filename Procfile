@@ -1,1 +1,1 @@
-web: python cleanup_db.py && python manage.py migrate --noinput && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1
+web: python cleanup_db.py; python manage.py migrate --noinput; gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1
