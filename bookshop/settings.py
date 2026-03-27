@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-dev-key-only')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.elasticbeanstalk.com', '*']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,7 +60,7 @@ WSGI_APPLICATION = 'bookshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/app/current/db.sqlite3',
+        'NAME': '/tmp/db.sqlite3',
     }
 }
 AUTH_PASSWORD_VALIDATORS = [
