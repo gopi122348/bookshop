@@ -1,93 +1,192 @@
 {% extends 'books/base.html' %}
-{% block title %}All Books{% endblock %}
+
+{% block title %}
+    All Books
+{% endblock %}
+
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <h2>All Books <span class="badge bg-secondary">{{ total_count }}</span></h2>
+    <h2>
+        All Books
+        <span class="badge bg-secondary">{{ total_count }}</span>
+    </h2>
+
+    {% if user.is_staff %}
+        <a href="{% url 'book_create' %}" class="btn btn-success">
+            Add New Book
+        </a>
+    {% endif %}
 </div>
+
 <form method="get" class="row g-2 mb-4">
-  <div class="col-md-6">
-    <input type="text" name="q" class="form-control"
-      placeholder="Search by title or author..." value="{{ query }}">
-  </div>
-  <div class="col-md-3">
-    <select name="genre" class="form-control">
-      <option value="">All Genres</option>
-      {% for val, label in genres %}
-      <option value="{{ val }}"
-        {% if genre_filter == val %}selected{% endif %}>{{ label }}</option>
-      {% endfor %}
-    </select>
-  </div>
-  <div class="col-md-2">
-    <button class="btn btn-primary w-100" type="submit">Search</button>
-  </div>
-  {% if query or genre_filter %}
-  <div class="col-md-1">
-    <a href="{% url 'book_list' %}" class="btn btn-outline-secondary w-100">Clear</a>
-  </div>
-  {% endif %}
+    <div class="col-md-6">
+        <input
+            type="text"
+            name="q"
+            class="form-control"
+            placeholder="Search by title or author..."
+            value="{{ query }}"
+        >
+    </div>
+
+    <div class="col-md-3">
+        <select name="genre" class="form-control">
+            <option value="">All Genres</option>
+            {% for val, label in genres %}
+                <option value="{{ val }}"
+                    {% if genre_filter == val %}selected{% endif %}>
+                    {{ label }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-md-2">
+        <button class="btn btn-primary w-100" type="submit">
+            Search
+        </button>
+    </div>
+
+    {% if query or genre_filter %}
+        <div class="col-md-1">
+            <a href="{% url 'book_list' %}" class="btn btn-outline-secondary w-100">
+                Clear
+            </a>
+        </div>
+    {% endif %}
 </form>
+
 {% if books %}
-<div class="row">
-  {% for book in books %}
-  <div class="col-md-4 mb-4">
-    <div class="card book-card h-100">
-      <div class="card-body">
-        <h5 class="card-title">{{ book.title }}</h5>
-        <p class="card-text text-muted">{{ book.author }}</p>
-        <p class="card-text">
-          <strong>£{{ book.price }}</strong>&nbsp;
-          {% if book.is_in_stock %}
-          <span class="badge bg-success">In Stock ({{ book.stock }})</span>
-          {% else %}
-          <span class="badge bg-danger">Out of Stock</span>
-          {% endif %}
-        </p>
-        <span class="badge bg-info text-dark">{{ book.get_genre_display }}</span>
-      </div>
-      <div class="card-footer bg-transparent">
-        <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-outline-primary">View</a>
-        <a href="{% url 'cart_add' book.pk %}" class="btn btn-sm btn-success">🛒 Add to Cart</a>
-        <a href="{% url 'book_order' book.pk %}" class="btn btn-sm btn-warning">⚡ Buy Now</a>
-        <a href="{% url 'book_update' book.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
-        <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
-      </div>
+    <div class="row">
+        {% for book in books %}
+            <div class="col-md-4 mb-4">
+                <div class="card book-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ book.title }}
+                        </h5>
+
+                        <p class="card-text text-muted">
+                            {{ book.author }}
+                        </p>
+
+                        <p class="card-text">
+                            <strong>&euro;{{ book.price }}</strong>&nbsp;
+
+                            {% if book.is_in_stock %}
+                                <span class="badge bg-success">
+                                    In Stock ({{ book.stock }})
+                                </span>
+                            {% else %}
+                                <span class="badge bg-danger">
+                                    Out of Stock
+                                </span>
+                            {% endif %}
+                        </p>
+
+                        <span class="badge bg-info text-dark">
+                            {{ book.get_genre_display }}
+                        </span>
+                    </div>
+
+                    <div class="card-footer bg-transparent">
+                        <a href="{% url 'book_detail' book.pk %}"
+                           class="btn btn-sm btn-outline-primary">
+                            View
+                        </a>
+
+                        <a href="{% url 'cart_add' book.pk %}"
+                           class="btn btn-sm btn-success">
+                            🛒 Add to Cart
+                        </a>
+
+                        <a href="{% url 'book_order' book.pk %}"
+                           class="btn btn-sm btn-warning">
+                            ⚡ Buy Now
+                        </a>
+
+                        {% if request.user.is_staff %}
+                            <a href="{% url 'book_update' book.pk %}"
+                               class="btn btn-sm btn-warning">
+                                Edit
+                            </a>
+                            <a href="{% url 'book_delete' book.pk %}"
+                               class="btn btn-sm btn-danger">
+                                Delete
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-  </div>
-  {% endfor %}
-</div>
 {% else %}
-<div class="alert alert-info">
-  No books found. <a href="{% url 'book_create' %}">Add the first one!</a>
-</div>
-{% endif %}
-<hr>
-{% if recommended_books %}
-<div class="mb-5 mt-4">
-  <h3 class="mb-3">⭐ Recommended Books</h3>
-  <p class="text-muted">Based on most purchased by our customers</p>
-  <div class="row">
-    {% for book in recommended_books %}
-    <div class="col-md-4 mb-3">
-      <div class="card border-warning h-100 book-card">
-        <div class="card-header bg-warning text-dark fw-bold">
-          ⭐ #{{ forloop.counter }} Most Ordered
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ book.title }}</h5>
-          <p class="text-muted mb-1">{{ book.author }}</p>
-          <p><strong>£{{ book.price }}</strong></p>
-          <p class="text-success">🛒 {{ book.total_sold }} copies sold</p>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{% url 'cart_add' book.pk %}" class="btn btn-sm btn-success">🛒 Add to Cart</a>
-          <a href="{% url 'book_order' book.pk %}" class="btn btn-sm btn-warning">⚡ Buy Now</a>
-          <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-outline-primary">View</a>
-        </div>
-      </div>
+    <div class="alert alert-info">
+        No books found.
+        {% if user.is_staff %}
+            <a href="{% url 'book_create' %}">
+                Add the first one!
+            </a>
+        {% endif %}
     </div>
-    {% endfor %}
-  </div>
-</div>
 {% endif %}
+
+<hr>
+
+{% if recommended_books %}
+    <div class="mb-5 mt-4">
+        <h3 class="mb-3">⭐ Recommended Books</h3>
+        <p class="text-muted">
+            Based on most purchased by our customers
+        </p>
+
+        <div class="row">
+            {% for book in recommended_books %}
+                <div class="col-md-4 mb-3">
+                    <div class="card border-warning h-100 book-card">
+                        <div class="card-header bg-warning text-dark fw-bold">
+                            ⭐ #{{ forloop.counter }} Most Ordered
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ book.title }}
+                            </h5>
+
+                            <p class="text-muted mb-1">
+                                {{ book.author }}
+                            </p>
+
+                            <p>
+                                <strong>&euro;{{ book.price }}</strong>
+                            </p>
+
+                            <p class="text-success">
+                                🛒 {{ book.total_sold }} copies sold
+                            </p>
+                        </div>
+
+                        <div class="card-footer bg-transparent">
+                            <a href="{% url 'cart_add' book.pk %}"
+                               class="btn btn-sm btn-success">
+                                🛒 Add to Cart
+                            </a>
+
+                            <a href="{% url 'book_order' book.pk %}"
+                               class="btn btn-sm btn-warning">
+                                ⚡ Buy Now
+                            </a>
+
+                            <a href="{% url 'book_detail' book.pk %}"
+                               class="btn btn-sm btn-outline-primary">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
 {% endblock %}
