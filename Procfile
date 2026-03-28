@@ -1,1 +1,1 @@
-web: python manage.py migrate --noinput --run-syncdb; gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1
+web: python manage.py migrate --noinput --run-syncdb; echo "from django.contrib.auth import get_user_model; U=get_user_model(); U.objects.filter(username='admin').exists() or U.objects.create_superuser('admin','admin@example.com','admin1234')" | python manage.py shell; gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1

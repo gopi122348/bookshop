@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.db.models import Q, Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.admin.views.decorators import staff_member_required
 
 from .models import Book, Order, OrderItem
 from .forms import BookForm, OrderForm
@@ -56,7 +57,7 @@ def book_detail(request, pk):
         {"book": book},
     )
 
-
+@staff_member_required
 def book_create(request):
     """Add a new book."""
     if request.method == "POST":
@@ -80,7 +81,7 @@ def book_create(request):
         },
     )
 
-
+@staff_member_required
 def book_update(request, pk):
     """Edit an existing book."""
     book = get_object_or_404(Book, pk=pk)
@@ -106,7 +107,7 @@ def book_update(request, pk):
         },
     )
 
-
+@staff_member_required
 def book_delete(request, pk):
     """Delete a book."""
     book = get_object_or_404(Book, pk=pk)
