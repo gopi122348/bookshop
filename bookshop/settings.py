@@ -12,7 +12,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-dev-key-only')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.elasticbeanstalk.com',
+    '*',  # temporary for testing
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
