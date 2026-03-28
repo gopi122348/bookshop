@@ -1,1 +1,1 @@
-web: python manage.py migrate --noinput && echo "from django.contrib.auth import get_user_model; U=get_user_model(); U.objects.filter(username='admin').delete(); U.objects.create_superuser('admin','admin@example.com','Admin1234!')" | python manage.py shell && gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1
+web: gunicorn bookshop.wsgi:application --bind 0.0.0.0:8000 --workers 1
