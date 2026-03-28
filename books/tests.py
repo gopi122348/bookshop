@@ -4,12 +4,12 @@ Unit tests for Book model and views.
 """
 from django.test import TestCase, Client
 from django.urls import reverse
+from django.contrib.auth.models import User
 from .models import Book
 
 
 class BookModelTest(TestCase):
     """Unit tests for the Book model."""
-
     def setUp(self):
         self.book = Book.objects.create(
             title='Test Book', author='Test Author',
@@ -37,9 +37,11 @@ class BookModelTest(TestCase):
 
 class BookViewTest(TestCase):
     """Integration tests for CRUD views."""
-
     def setUp(self):
         self.client = Client()
+        self.staff_user = User.objects.create_user(
+            username='admin', password='admin1234', is_staff=True
+        )
         self.book = Book.objects.create(
             title='View Test Book', author='View Author',
             isbn='9780000000002', price=14.99,
@@ -58,12 +60,14 @@ class BookViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_book_create_page_loads(self):
-        """Add book form page loads."""
+        """Add book form page loads for staff user."""
+        self.client.login(username='admin', password='admin1234')
         response = self.client.get(reverse('book_create'))
         self.assertEqual(response.status_code, 200)
 
     def test_book_create_valid_data(self):
         """Valid POST redirects to list."""
+        self.client.login(username='admin', password='admin1234')
         data = {
             'title': 'New Book', 'author': 'New Author',
             'isbn': '9780000000099', 'price': '12.99',
@@ -74,6 +78,7 @@ class BookViewTest(TestCase):
 
     def test_book_delete(self):
         """POST to book_delete removes book."""
+        self.client.login(username='admin', password='admin1234')
         response = self.client.post(
             reverse('book_delete', args=[self.book.pk]))
         self.assertEqual(response.status_code, 302)
