@@ -1,11 +1,12 @@
-{% extends 'books/base.html' %}   <!-- tells django to use base.html as parent layout,contains--<head>,navigation bar and footer-->
+{% extends 'books/base.html' %}
 
-{% block title %}{{ book.title }}{% endblock %}
+{% block title %}
+    {{ book.title }}
+{% endblock %}
 
-{% block content %}   <!--starts the main section of the page where the specific book details will be injected-->
+{% block content %}
 
-<div class="card shadow-sm">     <!--card shadow--A bootstrap container with subtle shadow-->
-
+<div class="card shadow-sm">
     <div class="card-header bg-dark text-white">
         <h3>{{ book.title }}</h3>
         <small>by {{ book.author }}</small>
@@ -38,23 +39,33 @@
                 <td>{{ book.published_date|default:"Unknown" }}</td>
             </tr>
         </table>
+
         <div class="d-flex gap-2">
-    <a href="{% url 'book_update' book.pk %}" class="btn btn-primary">Edit</a>
-    <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+            {% if user.is_staff %}
+                <a href="{% url 'book_update' book.pk %}"
+                   class="btn btn-sm btn-warning">
+                    Edit
+                </a>
+                <a href="{% url 'book_delete' book.pk %}"
+                   class="btn btn-sm btn-danger">
+                    Delete
+                </a>
+            {% endif %}
 
-    <!-- ADD: Add to Cart button -->
-    <form method="post" action="{% url 'cart_add' book.pk %}" class="d-inline">
-        {% csrf_token %}
-        <button class="btn btn-success">
-            &#128722; Add to Cart       <!--code for emoji-->
-        </button>
-    </form>
+            <form method="post"
+                  action="{% url 'cart_add' book.pk %}"
+                  class="d-inline">
+                {% csrf_token %}
+                <button class="btn btn-success">
+                    &#128722; Add to Cart
+                </button>
+            </form>
 
-    <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Back</a>
-</div>
-
-      
-
+            <a href="{% url 'book_list' %}"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+        </div>
     </div>
 </div>
 

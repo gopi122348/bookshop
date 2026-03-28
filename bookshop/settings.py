@@ -1,4 +1,5 @@
 import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from pathlib import Path
 try:
     from dotenv import load_dotenv
@@ -63,7 +64,7 @@ WSGI_APPLICATION = 'bookshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/app/current/db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
