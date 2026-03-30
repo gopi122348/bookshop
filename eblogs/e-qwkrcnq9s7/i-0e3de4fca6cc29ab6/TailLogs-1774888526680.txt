@@ -1,0 +1,279 @@
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]: Operations to perform:
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]: Synchronizing apps without migrations:
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  Creating tables...
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:    Running deferred SQL...
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]: Running migrations:
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  No migrations to apply.
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:31:51 ip-172-31-28-202 web[3386]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:31:51 ip-172-31-28-202 web[3384]: from
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]: Books package initialized
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]: Operations to perform:
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]: Synchronizing apps without migrations:
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Creating tables...
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:    Running deferred SQL...
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]: Running migrations:
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying contenttypes.0001_initial... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0001_initial... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying admin.0001_initial... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying admin.0002_logentry_remove_auto_add... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying admin.0003_logentry_add_action_flag_choices... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying contenttypes.0002_remove_content_type_name... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0002_alter_permission_name_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0003_alter_user_email_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0004_alter_user_username_opts... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0005_alter_user_last_login_null... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0006_require_contenttypes_0002... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0007_alter_validators_add_error_messages... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0008_alter_user_username_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0009_alter_user_last_name_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0010_alter_group_name_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0011_update_proxy_permissions... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying auth.0012_alter_user_first_name_max_length... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying books.0001_initial... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying books.0002_order_orderitem... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3900]:  Applying sessions.0001_initial... OK
+Mar 30 16:33:46 ip-172-31-28-202 web[3898]: from
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]: Books package initialized
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]: Operations to perform:
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]: Synchronizing apps without migrations:
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  Creating tables...
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:    Running deferred SQL...
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]: Running migrations:
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  No migrations to apply.
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:33:47 ip-172-31-28-202 web[3957]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:33:47 ip-172-31-28-202 web[3955]: from
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]: Books package initialized
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]: Operations to perform:
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]: Synchronizing apps without migrations:
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  Creating tables...
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:    Running deferred SQL...
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]: Running migrations:
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  No migrations to apply.
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:33:48 ip-172-31-28-202 web[3963]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:33:48 ip-172-31-28-202 web[3961]: from
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]: Books package initialized
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]: Operations to perform:
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]: Synchronizing apps without migrations:
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  Creating tables...
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:    Running deferred SQL...
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]: Running migrations:
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  No migrations to apply.
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:33:48 ip-172-31-28-202 web[3969]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:33:49 ip-172-31-28-202 web[3967]: from
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]: Books package initialized
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]: Operations to perform:
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]: Synchronizing apps without migrations:
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  Creating tables...
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:    Running deferred SQL...
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]: Running migrations:
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  No migrations to apply.
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:33:49 ip-172-31-28-202 web[3975]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:33:49 ip-172-31-28-202 web[3973]: from
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]: Books package initialized
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]: Operations to perform:
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  Synchronize unmigrated apps: messages, staticfiles
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  Apply all migrations: admin, auth, books, contenttypes, sessions
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]: Synchronizing apps without migrations:
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  Creating tables...
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:    Running deferred SQL...
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]: Running migrations:
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  No migrations to apply.
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  Your models in app(s): 'books' have changes that are not yet reflected in a migration, and so won't be applied.
+Mar 30 16:33:50 ip-172-31-28-202 web[3981]:  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+Mar 30 16:33:50 ip-172-31-28-202 web[3979]: from
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2026/03/30 16:33:43.588989 [INFO] Running command: systemctl show -p PartOf xray.service
+2026/03/30 16:33:43.602947 [WARN] stopProcess Warning: process xray is not registered 
+2026/03/30 16:33:43.602979 [INFO] Running command: systemctl stop xray.service
+2026/03/30 16:33:43.617708 [INFO] Executing instruction: stop proxy
+2026/03/30 16:33:43.617750 [INFO] Running command: systemctl show -p PartOf httpd.service
+2026/03/30 16:33:43.630957 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+
+2026/03/30 16:33:43.631288 [INFO] Running command: systemctl show -p PartOf nginx.service
+2026/03/30 16:33:43.643598 [INFO] Running command: systemctl is-active nginx.service
+2026/03/30 16:33:43.651571 [INFO] Running command: systemctl show -p PartOf nginx.service
+2026/03/30 16:33:43.660641 [INFO] Running command: systemctl stop nginx.service
+2026/03/30 16:33:43.898012 [INFO] Running command: systemctl disable nginx.service
+2026/03/30 16:33:44.155667 [INFO] Running command: systemctl daemon-reload
+2026/03/30 16:33:44.393301 [INFO] Running command: systemctl reset-failed
+2026/03/30 16:33:44.401820 [INFO] Executing instruction: FlipApplication
+2026/03/30 16:33:44.401844 [INFO] Fetching environment variables...
+2026/03/30 16:33:44.402055 [INFO] Purge old process...
+2026/03/30 16:33:44.402078 [INFO] Running command: systemctl stop eb-app.target
+2026/03/30 16:33:44.410045 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2026/03/30 16:33:44.419698 [INFO] web.service
+
+2026/03/30 16:33:44.419721 [INFO] deregistering process: web
+2026/03/30 16:33:44.419733 [INFO] Running command: systemctl show -p PartOf web.service
+2026/03/30 16:33:44.430499 [INFO] Running command: systemctl is-active web.service
+2026/03/30 16:33:44.438036 [INFO] Running command: systemctl disable web.service
+2026/03/30 16:33:44.684501 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
+
+2026/03/30 16:33:44.684577 [INFO] Running command: systemctl daemon-reload
+2026/03/30 16:33:44.930257 [INFO] Running command: systemctl reset-failed
+2026/03/30 16:33:44.938426 [INFO] Running command: systemctl is-active web.service
+2026/03/30 16:33:44.946514 [INFO] Process web has been fully terminated
+2026/03/30 16:33:44.946537 [INFO] All processes have been fully terminated
+2026/03/30 16:33:44.946542 [INFO] Removing /var/app/current/ if it exists
+2026/03/30 16:33:44.947542 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2026/03/30 16:33:44.947563 [INFO] Register application processes...
+2026/03/30 16:33:44.947567 [INFO] Registering the proc: web
+
+2026/03/30 16:33:44.947575 [INFO] Running command: systemctl show -p PartOf web.service
+2026/03/30 16:33:44.959954 [INFO] Running command: systemctl daemon-reload
+2026/03/30 16:33:45.213130 [INFO] Running command: systemctl reset-failed
+2026/03/30 16:33:45.221274 [INFO] Running command: systemctl is-enabled eb-app.target
+2026/03/30 16:33:45.228831 [INFO] Running command: systemctl enable eb-app.target
+2026/03/30 16:33:45.498937 [INFO] Running command: systemctl start eb-app.target
+2026/03/30 16:33:45.507914 [INFO] Running command: systemctl enable web.service
+2026/03/30 16:33:45.751712 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
+
+2026/03/30 16:33:45.751743 [INFO] Running command: systemctl show -p PartOf web.service
+2026/03/30 16:33:45.762815 [INFO] Running command: systemctl is-active web.service
+2026/03/30 16:33:45.769949 [INFO] Running command: systemctl start web.service
+2026/03/30 16:33:45.834382 [INFO] Executing instruction: start X-Ray
+2026/03/30 16:33:45.834403 [INFO] X-Ray is not enabled.
+2026/03/30 16:33:45.834420 [INFO] Executing instruction: start proxy with new configuration
+2026/03/30 16:33:45.834449 [INFO] Running command: /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2026/03/30 16:33:45.861764 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2026/03/30 16:33:45.862130 [INFO] Running command: cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2026/03/30 16:33:45.866705 [INFO] Running command: systemctl show -p PartOf nginx.service
+2026/03/30 16:33:45.889277 [INFO] Running command: systemctl daemon-reload
+2026/03/30 16:33:46.295410 [INFO] Running command: systemctl reset-failed
+2026/03/30 16:33:46.309396 [INFO] Running command: systemctl show -p PartOf nginx.service
+2026/03/30 16:33:46.327181 [INFO] Running command: systemctl is-active nginx.service
+2026/03/30 16:33:46.337172 [INFO] Running command: systemctl start nginx.service
+2026/03/30 16:33:46.468028 [INFO] Executing instruction: configureSqsd
+2026/03/30 16:33:46.468045 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2026/03/30 16:33:46.468050 [INFO] Executing instruction: startSqsd
+2026/03/30 16:33:46.468053 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2026/03/30 16:33:46.468056 [INFO] Executing instruction: Track pids in healthd
+2026/03/30 16:33:46.468060 [INFO] This is an enhanced health env...
+2026/03/30 16:33:46.468072 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2026/03/30 16:33:46.483062 [INFO] cfn-hup.service healthd.service nginx.service
+
+2026/03/30 16:33:46.483090 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2026/03/30 16:33:46.497220 [INFO] web.service
+
+2026/03/30 16:33:46.497451 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2026/03/30 16:33:46.497473 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2026/03/30 16:33:46.497499 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2026/03/30 16:33:46.497502 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2026/03/30 16:33:46.497508 [INFO] Executing cleanup logic
+2026/03/30 16:33:46.497619 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment used the commands in your 'Procfile' to initiate startup of your application.","timestamp":1774888420517,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1774888426497,"severity":"INFO"}]}]}
+
+2026/03/30 16:33:46.498682 [INFO] Platform Engine finished execution on command: app-deploy
+
+2026/03/30 16:35:25.968239 [INFO] Starting...
+2026/03/30 16:35:25.968290 [INFO] Starting EBPlatform-PlatformEngine
+2026/03/30 16:35:25.968312 [INFO] reading event message file
+2026/03/30 16:35:25.968674 [INFO] Engine received EB command cfn-hup-exec
+
+2026/03/30 16:35:26.068578 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1
+2026/03/30 16:35:26.377932 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBBeanstalkMetadata --region us-east-1
+2026/03/30 16:35:26.680022 [INFO] checking whether command tail-log is applicable to this instance...
+2026/03/30 16:35:26.680034 [INFO] this command is applicable to the instance, thus instance should execute command
+2026/03/30 16:35:26.680037 [INFO] Engine command: (tail-log)
+
+2026/03/30 16:35:26.680088 [INFO] Executing instruction: GetTailLogs
+2026/03/30 16:35:26.680091 [INFO] Tail Logs...
+2026/03/30 16:35:26.680675 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2026/03/30 16:35:26.683000 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+
+
+----------------------------------------
+/var/log/nginx/access.log
+----------------------------------------
+193.1.245.249 - - [30/Mar/2026:16:28:02 +0000] "GET /book/add/ HTTP/1.1" 502 552 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:30:16 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:30:57 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:30:58 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:30:59 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:00 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:01 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:02 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:03 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:03 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:04 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:05 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:06 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:07 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:08 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:56 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:57 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:31:58 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:33:56 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:33:57 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:16:34:04 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+
+
+----------------------------------------
+/var/log/nginx/error.log
+----------------------------------------
+2026/03/30 16:24:47 [warn] 2034#2034: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:24:47 [warn] 2067#2067: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:24:47 [warn] 2068#2068: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:27:48 [warn] 2644#2644: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:27:48 [warn] 2677#2677: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:27:48 [warn] 2678#2678: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:28:02 [error] 2680#2680: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET /book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/"
+2026/03/30 16:30:16 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:30:57 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:30:58 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:30:59 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:00 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:01 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:02 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:03 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:03 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:04 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:05 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:06 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:07 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:08 [error] 2680#2680: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:46 [warn] 3307#3307: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:31:47 [warn] 3340#3340: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:31:47 [warn] 3341#3341: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:31:56 [error] 3344#3344: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:57 [error] 3344#3344: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:31:58 [error] 3344#3344: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:33:45 [warn] 3903#3903: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:33:46 [warn] 3936#3936: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:33:46 [warn] 3937#3937: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:33:56 [error] 3941#3941: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:33:57 [error] 3941#3941: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:34:04 [error] 3941#3941: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+
+

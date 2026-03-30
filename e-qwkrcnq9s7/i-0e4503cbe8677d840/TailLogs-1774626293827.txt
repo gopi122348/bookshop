@@ -1,0 +1,425 @@
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(query, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: sqlite3.OperationalError: no such table: books_book
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: The above exception was the direct cause of the following exception:
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: Traceback (most recent call last):
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    response = get_response(request)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:               ^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/current/books/views.py", line 43, in book_list
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    "total_count": books.count(),
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:                   ^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/query.py", line 610, in count
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.query.get_count(using=self.db)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/query.py", line 570, in get_count
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/query.py", line 556, in get_aggregation
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    result = compiler.execute_sql(SINGLE)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self._execute_with_wrappers(
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return executor(sql, params, many, context)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    with self.db.wrap_database_errors:
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    raise dj_exc_value.with_traceback(traceback) from exc_value
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(query, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: django.db.utils.OperationalError: no such table: books_book
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: Internal Server Error: /
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: Traceback (most recent call last):
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(query, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: sqlite3.OperationalError: no such table: books_book
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: The above exception was the direct cause of the following exception:
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: Traceback (most recent call last):
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    response = get_response(request)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:               ^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/current/books/views.py", line 43, in book_list
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    "total_count": books.count(),
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:                   ^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/query.py", line 610, in count
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.query.get_count(using=self.db)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/query.py", line 570, in get_count
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/query.py", line 556, in get_aggregation
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    result = compiler.execute_sql(SINGLE)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self._execute_with_wrappers(
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return executor(sql, params, many, context)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    with self.db.wrap_database_errors:
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    raise dj_exc_value.with_traceback(traceback) from exc_value
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return self.cursor.execute(sql, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:    return super().execute(query, params)
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 27 15:41:04 ip-172-31-22-67 web[41296]: django.db.utils.OperationalError: no such table: books_book
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+Requirement already satisfied: pluggy==1.6.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 36)) (1.6.0)
+Requirement already satisfied: psycopg2-binary==2.9.11 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 37)) (2.9.11)
+Requirement already satisfied: pycodestyle==2.14.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 38)) (2.14.0)
+Requirement already satisfied: pycparser==2.23 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 39)) (2.23)
+Requirement already satisfied: pyflakes==3.4.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 40)) (3.4.0)
+Requirement already satisfied: Pygments==2.19.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 41)) (2.19.2)
+Requirement already satisfied: pylint==3.3.9 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 42)) (3.3.9)
+Requirement already satisfied: PyNaCl==1.6.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 43)) (1.6.2)
+Requirement already satisfied: pytest==8.4.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 44)) (8.4.2)
+Requirement already satisfied: pytest-django==4.11.1 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 45)) (4.11.1)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 46)) (2.9.0.post0)
+Requirement already satisfied: python-dotenv==1.2.1 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 47)) (1.2.1)
+Requirement already satisfied: PyYAML==6.0.3 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 48)) (6.0.3)
+Requirement already satisfied: requests==2.32.5 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 49)) (2.32.5)
+Requirement already satisfied: rich==14.3.3 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 50)) (14.3.3)
+Requirement already satisfied: semantic-version==2.10.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 51)) (2.10.0)
+Requirement already satisfied: six==1.17.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 52)) (1.17.0)
+Requirement already satisfied: sqlparse==0.5.5 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 53)) (0.5.5)
+Requirement already satisfied: stevedore==5.5.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 54)) (5.5.0)
+Requirement already satisfied: termcolor==2.5.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 55)) (2.5.0)
+Requirement already satisfied: tomli==2.4.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 56)) (2.4.0)
+Requirement already satisfied: tomlkit==0.14.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 57)) (0.14.0)
+Requirement already satisfied: typing_extensions==4.15.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 58)) (4.15.0)
+Requirement already satisfied: urllib3==1.26.20 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 59)) (1.26.20)
+Requirement already satisfied: wcwidth==0.2.14 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 60)) (0.2.14)
+Requirement already satisfied: whitenoise==6.11.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 61)) (6.11.0)
+Requirement already satisfied: wrapt==2.1.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 62)) (2.1.2)
+Requirement already satisfied: zipp==3.23.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 63)) (3.23.0)
+Requirement already satisfied: setuptools>=20.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from awsebcli==3.27.1->-r requirements.txt (line 3)) (82.0.0)
+
+2026/03/27 15:44:12.152659 [INFO] Executing instruction: check Procfile
+2026/03/27 15:44:12.152714 [INFO] detected Procfile in application source bundle ...
+2026/03/27 15:44:12.152722 [INFO] Executing instruction: configure X-Ray
+2026/03/27 15:44:12.152728 [INFO] X-Ray is not enabled.
+2026/03/27 15:44:12.152732 [INFO] Executing instruction: configure proxy server
+2026/03/27 15:44:12.152750 [INFO] Recreating /var/proxy/staging/nginx
+2026/03/27 15:44:12.162938 [INFO] Executing instruction: configure healthd specific proxy conf
+2026/03/27 15:44:12.165253 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/27 15:44:12.238118 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2026/03/27 15:44:12.238165 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/27 15:44:12.253172 [INFO] Running command: systemctl is-active healthd.service
+2026/03/27 15:44:12.264469 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/27 15:44:12.277397 [INFO] Running command: systemctl stop healthd.service
+2026/03/27 15:44:12.383073 [INFO] Running command: systemctl disable healthd.service
+2026/03/27 15:44:12.638322 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+
+2026/03/27 15:44:12.638411 [INFO] Running command: systemctl daemon-reload
+2026/03/27 15:44:12.921366 [INFO] Running command: systemctl reset-failed
+2026/03/27 15:44:12.932884 [INFO] Running command: systemctl daemon-reload
+2026/03/27 15:44:13.170392 [INFO] Running command: systemctl reset-failed
+2026/03/27 15:44:13.178448 [INFO] Running command: systemctl is-enabled aws-eb.target
+2026/03/27 15:44:13.186869 [INFO] Running command: systemctl enable aws-eb.target
+2026/03/27 15:44:13.430826 [INFO] Running command: systemctl start aws-eb.target
+2026/03/27 15:44:13.439586 [INFO] Running command: systemctl enable healthd.service
+2026/03/27 15:44:13.646367 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service â†’ /etc/systemd/system/healthd.service.
+
+2026/03/27 15:44:13.646404 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/27 15:44:13.657253 [INFO] Running command: systemctl is-active healthd.service
+2026/03/27 15:44:13.665284 [INFO] Running command: systemctl start healthd.service
+2026/03/27 15:44:13.768304 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2026/03/27 15:44:13.769942 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2026/03/27 15:44:13.771181 [INFO] Executing instruction: configure log streaming
+2026/03/27 15:44:13.771197 [INFO] log streaming is not enabled
+2026/03/27 15:44:13.771202 [INFO] disable log stream
+2026/03/27 15:44:13.771215 [INFO] Running command: systemctl show -p PartOf amazon-cloudwatch-agent.service
+2026/03/27 15:44:13.790566 [INFO] Running command: systemctl stop amazon-cloudwatch-agent.service
+2026/03/27 15:44:13.809269 [INFO] Executing instruction: GetToggleForceRotate
+2026/03/27 15:44:13.809302 [INFO] Checking if logs need forced rotation
+2026/03/27 15:44:13.809322 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1
+2026/03/27 15:44:14.265503 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBBeanstalkMetadata --region us-east-1
+2026/03/27 15:44:14.689740 [INFO] Generating rsyslog config from Procfile
+2026/03/27 15:44:14.692006 [INFO] Running command: systemctl restart rsyslog.service
+2026/03/27 15:44:14.908391 [INFO] Executing instruction: PostBuildEbExtension
+2026/03/27 15:44:14.908427 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2026/03/27 15:44:14.908441 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPostBuild
+2026/03/27 15:44:15.734719 [INFO] Error occurred during build: Command 01_migrate failed
+
+2026/03/27 15:44:15.734761 [ERROR] An error occurred during execution of command [app-deploy] - [PostBuildEbExtension]. Stop running the command. Error: container commands build failed. Please refer to /var/log/cfn-init.log for more details. 
+
+2026/03/27 15:44:15.734765 [INFO] Executing cleanup logic
+2026/03/27 15:44:15.734858 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment used the commands in your 'Procfile' to initiate startup of your application.","timestamp":1774626252152,"severity":"INFO"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1774626255734,"severity":"ERROR"}]}]}
+
+2026/03/27 15:44:15.736010 [INFO] Platform Engine finished execution on command: app-deploy
+
+2026/03/27 15:44:53.105883 [INFO] Starting...
+2026/03/27 15:44:53.105943 [INFO] Starting EBPlatform-PlatformEngine
+2026/03/27 15:44:53.105965 [INFO] reading event message file
+2026/03/27 15:44:53.106410 [INFO] Engine received EB command cfn-hup-exec
+
+2026/03/27 15:44:53.191399 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1
+2026/03/27 15:44:53.522612 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBBeanstalkMetadata --region us-east-1
+2026/03/27 15:44:53.825556 [INFO] checking whether command tail-log is applicable to this instance...
+2026/03/27 15:44:53.825570 [INFO] this command is applicable to the instance, thus instance should execute command
+2026/03/27 15:44:53.825575 [INFO] Engine command: (tail-log)
+
+2026/03/27 15:44:53.825631 [INFO] Executing instruction: GetTailLogs
+2026/03/27 15:44:53.825634 [INFO] Tail Logs...
+2026/03/27 15:44:53.827476 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2026/03/27 15:44:53.829651 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+
+
+----------------------------------------
+/var/log/nginx/access.log
+----------------------------------------
+51.103.152.71 - - [27/Mar/2026:11:31:26 +0000] "GET /caiij.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:26 +0000] "GET /gel4y.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:26 +0000] "GET /uxijj.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:26 +0000] "GET /rkiea.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /resp.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /lanou.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /eursi.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /pas2.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /schal.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:27 +0000] "GET /xex.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /wp-admin/maint/wta.php HTTP/1.1" 404 4924 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /wp-admin/maint/dtyh.php HTTP/1.1" 404 4927 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /dtyh.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /wta.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /ws77.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /ws86.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /saorix1.php HTTP/1.1" 404 4891 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /wp-class.php HTTP/1.1" 404 4894 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:28 +0000] "GET /uuu.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /wp-load.php HTTP/1.1" 404 4891 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /gpt-sh.php HTTP/1.1" 404 4888 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /bywaf.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /wp-true.php HTTP/1.1" 404 4891 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /byp8.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /tx88.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:29 +0000] "GET /tx79.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /max.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /z60.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /utky.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /uang.php HTTP/1.1" 404 4882 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /wp3.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /wp9.php HTTP/1.1" 404 4879 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:30 +0000] "GET /wp-admin/maint/absorption.php HTTP/1.1" 404 4945 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /ticket.php HTTP/1.1" 404 4888 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /wglum1.php HTTP/1.1" 404 4888 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /xpwer1.php HTTP/1.1" 404 4888 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /yuzuru1.php HTTP/1.1" 404 4891 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /wdone1.php HTTP/1.1" 404 4888 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /xpass.php HTTP/1.1" 404 4885 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:31 +0000] "GET /ad.php HTTP/1.1" 404 4876 "-" "-" "-"
+51.103.152.71 - - [27/Mar/2026:11:31:32 +0000] "GET /h02ugyh.php HTTP/1.1" 404 4891 "-" "-" "-"
+104.253.212.40 - - [27/Mar/2026:12:00:16 +0000] "GET /.env HTTP/1.1" 404 4842 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "-"
+104.253.212.40 - - [27/Mar/2026:12:00:16 +0000] "POST / HTTP/1.1" 403 2870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "-"
+43.153.76.247 - - [27/Mar/2026:12:07:26 +0000] "GET / HTTP/1.1" 200 5131 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1" "-"
+135.119.112.96 - - [27/Mar/2026:12:12:11 +0000] "GET /developmentserver/metadatauploader HTTP/1.1" 404 4932 "-" "Mozilla/5.0 zgrab/0.x" "-"
+204.76.203.206 - - [27/Mar/2026:12:45:18 +0000] "GET / HTTP/1.1" 200 5131 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46" "-"
+193.1.245.140 - - [27/Mar/2026:13:00:41 +0000] "GET / HTTP/1.1" 200 5131 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:00:41 +0000] "GET /favicon.ico HTTP/1.1" 404 4905 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:08 +0000] "GET /book/2/order/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:08 +0000] "GET /accounts/login/?next=/book/2/order/ HTTP/1.1" 200 2356 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:12 +0000] "POST /accounts/login/?next=/book/2/order/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/accounts/login/?next=/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:12 +0000] "GET /book/2/order/ HTTP/1.1" 200 2474 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/accounts/login/?next=/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:20 +0000] "POST /book/2/order/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:20 +0000] "GET / HTTP/1.1" 200 6279 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:23 +0000] "GET /orders/ HTTP/1.1" 200 2205 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:01:34 +0000] "GET / HTTP/1.1" 200 6046 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/orders/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:22:09 +0000] "GET / HTTP/1.1" 200 6046 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/orders/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:22:11 +0000] "GET /book/1/ HTTP/1.1" 200 3005 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:22:14 +0000] "GET /book/1/edit/ HTTP/1.1" 200 5672 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/book/1/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:22:20 +0000] "GET /book/1/cart/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:13:22:20 +0000] "GET /book/1/ HTTP/1.1" 200 3228 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+204.76.203.206 - - [27/Mar/2026:14:23:59 +0000] "GET / HTTP/1.1" 200 2469 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46" "-"
+172.245.157.27 - - [27/Mar/2026:14:31:25 +0000] "GET /.env HTTP/1.1" 404 4121 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "-"
+172.245.157.27 - - [27/Mar/2026:14:31:25 +0000] "POST / HTTP/1.1" 403 2870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "-"
+3.90.250.34 - - [27/Mar/2026:14:32:41 +0000] "GET / HTTP/1.1" 200 2469 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+193.1.245.140 - - [27/Mar/2026:14:38:50 +0000] "GET /book/1/ HTTP/1.1" 404 2653 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:04 +0000] "GET /book/1/cart/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:04 +0000] "GET /accounts/login/?next=/book/1/cart/add/ HTTP/1.1" 200 2431 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:08 +0000] "GET /book/1/ HTTP/1.1" 404 2653 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:13 +0000] "GET /book/1/order/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:13 +0000] "GET /accounts/login/?next=/book/1/order/ HTTP/1.1" 200 2431 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:14:39:19 +0000] "GET /book/1/edit/ HTTP/1.1" 404 3036 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:52 +0000] "GET / HTTP/1.1" 500 119158 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/orders/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:54 +0000] "GET /orders/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:54 +0000] "GET /accounts/login/?next=/orders/ HTTP/1.1" 200 2356 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:57 +0000] "GET /book/2/order/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/accounts/login/?next=/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:57 +0000] "GET /accounts/login/?next=/book/2/order/ HTTP/1.1" 200 2356 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/accounts/login/?next=/book/2/order/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:08:58 +0000] "GET /accounts/login/?next=/book/2/order/ HTTP/1.1" 200 2356 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:09:39 +0000] "GET / HTTP/1.1" 500 118828 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:14:14 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+45.91.64.7 - - [27/Mar/2026:15:15:32 +0000] "GET / HTTP/1.0" 500 117394 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 OPR/86.0.4363.59" "-"
+193.1.245.140 - - [27/Mar/2026:15:20:15 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:22:39 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:25:59 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:26:19 +0000] "GET / HTTP/1.1" 500 117547 "-" "WhatsApp/2.2607.106 W" "-"
+193.1.245.140 - - [27/Mar/2026:15:28:07 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:28:08 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:28:34 +0000] "GET / HTTP/1.1" 500 118828 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:31:27 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:31:30 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:34:35 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:36:19 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:37:13 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:37:15 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:38:04 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:38:41 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:40:27 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:41:01 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:41:04 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.140 - - [27/Mar/2026:15:41:04 +0000] "GET / HTTP/1.1" 500 118965 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+
+
+----------------------------------------
+/var/log/nginx/error.log
+----------------------------------------
+2026/03/27 03:21:24 [warn] 2086#2086: *89 using uninitialized "year" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 03:21:24 [warn] 2086#2086: *89 using uninitialized "month" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 03:21:24 [warn] 2086#2086: *89 using uninitialized "day" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 03:21:24 [warn] 2086#2086: *89 using uninitialized "hour" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 03:21:28 [warn] 2086#2086: *90 using uninitialized "year" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 03:21:28 [warn] 2086#2086: *90 using uninitialized "month" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 03:21:28 [warn] 2086#2086: *90 using uninitialized "day" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 03:21:28 [warn] 2086#2086: *90 using uninitialized "hour" variable while logging request, client: 31.56.222.138, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 03:42:37 [warn] 2086#2086: *138 using uninitialized "year" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 03:42:37 [warn] 2086#2086: *138 using uninitialized "month" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 03:42:37 [warn] 2086#2086: *138 using uninitialized "day" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 03:42:37 [warn] 2086#2086: *138 using uninitialized "hour" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 04:18:36 [warn] 2087#2087: *150 using uninitialized "year" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú²r«†á¨ÒˆpÔó\"³^_	[ëÿc§·,jƒ İÍ üùˆK“†Ãøáä÷…ÔtÔ4‘5T1>hÃ(š¿R 2À+À/À,À0Ì©Ì¨À	ÀÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *150 using uninitialized "month" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú²r«†á¨ÒˆpÔó\"³^_	[ëÿc§·,jƒ İÍ üùˆK“†Ãøáä÷…ÔtÔ4‘5T1>hÃ(š¿R 2À+À/À,À0Ì©Ì¨À	ÀÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *150 using uninitialized "day" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú²r«†á¨ÒˆpÔó\"³^_	[ëÿc§·,jƒ İÍ üùˆK“†Ãøáä÷…ÔtÔ4‘5T1>hÃ(š¿R 2À+À/À,À0Ì©Ì¨À	ÀÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *150 using uninitialized "hour" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú²r«†á¨ÒˆpÔó\"³^_	[ëÿc§·,jƒ İÍ üùˆK“†Ãøáä÷…ÔtÔ4‘5T1>hÃ(š¿R 2À+À/À,À0Ì©Ì¨À	ÀÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *151 using uninitialized "year" variable while logging request, client: 3.15.111.240, server: , request: " à  ÜNÊö¢ñbi·Ñœ¸š•¯•¡hìè"
+2026/03/27 04:18:36 [warn] 2087#2087: *151 using uninitialized "month" variable while logging request, client: 3.15.111.240, server: , request: " à  ÜNÊö¢ñbi·Ñœ¸š•¯•¡hìè"
+2026/03/27 04:18:36 [warn] 2087#2087: *151 using uninitialized "day" variable while logging request, client: 3.15.111.240, server: , request: " à  ÜNÊö¢ñbi·Ñœ¸š•¯•¡hìè"
+2026/03/27 04:18:36 [warn] 2087#2087: *151 using uninitialized "hour" variable while logging request, client: 3.15.111.240, server: , request: " à  ÜNÊö¢ñbi·Ñœ¸š•¯•¡hìè"
+2026/03/27 04:18:36 [warn] 2087#2087: *152 using uninitialized "year" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú"
+2026/03/27 04:18:36 [warn] 2087#2087: *152 using uninitialized "month" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú"
+2026/03/27 04:18:36 [warn] 2087#2087: *152 using uninitialized "day" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú"
+2026/03/27 04:18:36 [warn] 2087#2087: *152 using uninitialized "hour" variable while logging request, client: 3.15.111.240, server: , request: "Ş Ú"
+2026/03/27 04:18:36 [warn] 2087#2087: *153 using uninitialized "year" variable while logging request, client: 3.15.111.240, server: , request: " à  Üû10€¤Ô:Ã8Â*7WÛ±y4şÌşûù´¯rdÜ  hÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *153 using uninitialized "month" variable while logging request, client: 3.15.111.240, server: , request: " à  Üû10€¤Ô:Ã8Â*7WÛ±y4şÌşûù´¯rdÜ  hÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *153 using uninitialized "day" variable while logging request, client: 3.15.111.240, server: , request: " à  Üû10€¤Ô:Ã8Â*7WÛ±y4şÌşûù´¯rdÜ  hÀ"
+2026/03/27 04:18:36 [warn] 2087#2087: *153 using uninitialized "hour" variable while logging request, client: 3.15.111.240, server: , request: " à  Üû10€¤Ô:Ã8Â*7WÛ±y4şÌşûù´¯rdÜ  hÀ"
+2026/03/27 04:20:48 [warn] 2087#2087: *171 using uninitialized "year" variable while logging request, client: 199.45.154.142, server: , request: "PRI * HTTP/2.0"
+2026/03/27 04:20:48 [warn] 2087#2087: *171 using uninitialized "month" variable while logging request, client: 199.45.154.142, server: , request: "PRI * HTTP/2.0"
+2026/03/27 04:20:48 [warn] 2087#2087: *171 using uninitialized "day" variable while logging request, client: 199.45.154.142, server: , request: "PRI * HTTP/2.0"
+2026/03/27 04:20:48 [warn] 2087#2087: *171 using uninitialized "hour" variable while logging request, client: 199.45.154.142, server: , request: "PRI * HTTP/2.0"
+2026/03/27 04:20:51 [warn] 2087#2087: *168 using uninitialized "year" variable while logging request, client: 199.45.154.142, server: , request: " î  êO}¿F+ı"C“«ê€O^‡ã†UòÜ|vĞF´ ²ï¶`Ä½1p$«›,,Zt+6f	@¯Öş5] &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:51 [warn] 2087#2087: *168 using uninitialized "month" variable while logging request, client: 199.45.154.142, server: , request: " î  êO}¿F+ı"C“«ê€O^‡ã†UòÜ|vĞF´ ²ï¶`Ä½1p$«›,,Zt+6f	@¯Öş5] &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:51 [warn] 2087#2087: *168 using uninitialized "day" variable while logging request, client: 199.45.154.142, server: , request: " î  êO}¿F+ı"C“«ê€O^‡ã†UòÜ|vĞF´ ²ï¶`Ä½1p$«›,,Zt+6f	@¯Öş5] &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:51 [warn] 2087#2087: *168 using uninitialized "hour" variable while logging request, client: 199.45.154.142, server: , request: " î  êO}¿F+ı"C“«ê€O^‡ã†UòÜ|vĞF´ ²ï¶`Ä½1p$«›,,Zt+6f	@¯Öş5] &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:56 [warn] 2086#2086: *174 using uninitialized "year" variable while logging request, client: 199.45.154.142, server: , request: " î  ê†fîoı[*nu¡€—zsN …gÛX“lHp[]Á÷ j\OAgş\=]ÉO|êÉ"Ø›·Ø‡@–Íi‚uö &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:56 [warn] 2086#2086: *174 using uninitialized "month" variable while logging request, client: 199.45.154.142, server: , request: " î  ê†fîoı[*nu¡€—zsN …gÛX“lHp[]Á÷ j\OAgş\=]ÉO|êÉ"Ø›·Ø‡@–Íi‚uö &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:56 [warn] 2086#2086: *174 using uninitialized "day" variable while logging request, client: 199.45.154.142, server: , request: " î  ê†fîoı[*nu¡€—zsN …gÛX“lHp[]Á÷ j\OAgş\=]ÉO|êÉ"Ø›·Ø‡@–Íi‚uö &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 04:20:56 [warn] 2086#2086: *174 using uninitialized "hour" variable while logging request, client: 199.45.154.142, server: , request: " î  ê†fîoı[*nu¡€—zsN …gÛX“lHp[]Á÷ j\OAgş\=]ÉO|êÉ"Ø›·Ø‡@–Íi‚uö &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ"
+2026/03/27 06:50:54 [warn] 2087#2087: *221 using uninitialized "year" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 06:50:54 [warn] 2087#2087: *221 using uninitialized "month" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 06:50:54 [warn] 2087#2087: *221 using uninitialized "day" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 06:50:54 [warn] 2087#2087: *221 using uninitialized "hour" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1"
+2026/03/27 06:51:06 [warn] 2087#2087: *222 using uninitialized "year" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 06:51:06 [warn] 2087#2087: *222 using uninitialized "month" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 06:51:06 [warn] 2087#2087: *222 using uninitialized "day" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 06:51:06 [warn] 2087#2087: *222 using uninitialized "hour" variable while logging request, client: 117.72.156.246, server: , request: "POST /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh HTTP/1.1"
+2026/03/27 09:17:33 [warn] 2086#2086: *244 using uninitialized "year" variable while logging request, client: 71.6.134.233, server: , request: " ì  ère(BÚçS…$*NhYeJÅ×7î5ÅğÎ	X8¦ eB«pŞ¡~©Ip¸Ä¶!6ÇPûÏï˜}÷íC,p]h  ššÀ+À/À,À0Ì©Ì¨ÀÀ œ  / 5         "
+2026/03/27 09:17:33 [warn] 2086#2086: *244 using uninitialized "month" variable while logging request, client: 71.6.134.233, server: , request: " ì  ère(BÚçS…$*NhYeJÅ×7î5ÅğÎ	X8¦ eB«pŞ¡~©Ip¸Ä¶!6ÇPûÏï˜}÷íC,p]h  ššÀ+À/À,À0Ì©Ì¨ÀÀ œ  / 5         "
+2026/03/27 09:17:33 [warn] 2086#2086: *244 using uninitialized "day" variable while logging request, client: 71.6.134.233, server: , request: " ì  ère(BÚçS…$*NhYeJÅ×7î5ÅğÎ	X8¦ eB«pŞ¡~©Ip¸Ä¶!6ÇPûÏï˜}÷íC,p]h  ššÀ+À/À,À0Ì©Ì¨ÀÀ œ  / 5         "
+2026/03/27 09:17:33 [warn] 2086#2086: *244 using uninitialized "hour" variable while logging request, client: 71.6.134.233, server: , request: " ì  ère(BÚçS…$*NhYeJÅ×7î5ÅğÎ	X8¦ eB«pŞ¡~©Ip¸Ä¶!6ÇPûÏï˜}÷íC,p]h  ššÀ+À/À,À0Ì©Ì¨ÀÀ œ  / 5         "
+2026/03/27 09:37:51 [warn] 2086#2086: *249 using uninitialized "year" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 09:37:51 [warn] 2086#2086: *249 using uninitialized "month" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 09:37:51 [warn] 2086#2086: *249 using uninitialized "day" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 09:37:51 [warn] 2086#2086: *249 using uninitialized "hour" variable while logging request, client: 93.174.93.12, server: , request: "o kRHÅ#÷:Nßâ´‚/ÿ	TŸ§Äy°hÆŒ¤="á˜ „´,…¯nãY»bhlÿ(=':©‚ÙoÈ¢×“˜´ï€å¹ (À"
+2026/03/27 11:00:58 [warn] 2087#2087: *395 using uninitialized "year" variable while logging request, client: 66.240.205.34, server: , request: "Gh0st­   à   xœKS``˜ÃÀÀÀÄŒ@¼Q–	H§•e&§*$&g+2”ö°00¬¨rc  ‚\`&ƒÇK7†ån9•n;„3¬èsch¨^Ï4'J—©‚ã0Ã‘h]&øÎ—SËA4L?2=áÄ’†@õ`T®¯]"
+2026/03/27 11:00:58 [warn] 2087#2087: *395 using uninitialized "month" variable while logging request, client: 66.240.205.34, server: , request: "Gh0st­   à   xœKS``˜ÃÀÀÀÄŒ@¼Q–	H§•e&§*$&g+2”ö°00¬¨rc  ‚\`&ƒÇK7†ån9•n;„3¬èsch¨^Ï4'J—©‚ã0Ã‘h]&øÎ—SËA4L?2=áÄ’†@õ`T®¯]"
+2026/03/27 11:00:58 [warn] 2087#2087: *395 using uninitialized "day" variable while logging request, client: 66.240.205.34, server: , request: "Gh0st­   à   xœKS``˜ÃÀÀÀÄŒ@¼Q–	H§•e&§*$&g+2”ö°00¬¨rc  ‚\`&ƒÇK7†ån9•n;„3¬èsch¨^Ï4'J—©‚ã0Ã‘h]&øÎ—SËA4L?2=áÄ’†@õ`T®¯]"
+2026/03/27 11:00:58 [warn] 2087#2087: *395 using uninitialized "hour" variable while logging request, client: 66.240.205.34, server: , request: "Gh0st­   à   xœKS``˜ÃÀÀÀÄŒ@¼Q–	H§•e&§*$&g+2”ö°00¬¨rc  ‚\`&ƒÇK7†ån9•n;„3¬èsch¨^Ï4'J—©‚ã0Ã‘h]&øÎ—SËA4L?2=áÄ’†@õ`T®¯]"
+2026/03/27 13:40:30 [warn] 33295#33295: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 13:40:30 [warn] 33331#33331: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 13:40:30 [warn] 33332#33332: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 13:44:31 [warn] 33902#33902: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 13:44:32 [warn] 33938#33938: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 13:44:32 [warn] 33939#33939: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:00:49 [warn] 34941#34941: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:00:49 [warn] 34977#34977: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:00:49 [warn] 34978#34978: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:56:14 [warn] 37341#37341: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:56:15 [warn] 37377#37377: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 14:56:15 [warn] 37378#37378: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:08:52 [warn] 37380#37380: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/orders/"
+2026/03/27 15:14:14 [warn] 37381#37381: *10 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:15:04 [warn] 37381#37381: *13 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/3/00/0000000003 while reading upstream, client: 45.91.64.7, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.0.1:8000/"
+2026/03/27 15:20:15 [warn] 37381#37381: *15 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/4/00/0000000004 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:22:39 [warn] 37381#37381: *18 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/5/00/0000000005 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:25:58 [warn] 37381#37381: *21 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/6/00/0000000006 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:26:19 [warn] 37381#37381: *24 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/7/00/0000000007 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:27:52 [warn] 38983#38983: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:27:53 [warn] 39019#39019: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:27:53 [warn] 39020#39020: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:28:07 [warn] 39024#39024: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:31:00 [warn] 39592#39592: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:31:01 [warn] 39628#39628: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:31:01 [warn] 39629#39629: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:31:27 [warn] 39631#39631: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:32:28 [warn] 40135#40135: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:32:29 [warn] 40171#40171: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:32:29 [warn] 40172#40172: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:34:22 [warn] 40678#40678: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:34:22 [warn] 40714#40714: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:34:22 [warn] 40715#40715: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:34:35 [warn] 40717#40717: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:36:19 [warn] 40718#40718: *5 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:38:32 [warn] 41292#41292: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:38:32 [warn] 41328#41328: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:38:32 [warn] 41329#41329: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/27 15:38:41 [warn] 41333#41333: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/27 15:40:27 [warn] 41333#41333: *4 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.140, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+
+

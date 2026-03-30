@@ -1,0 +1,372 @@
+----------------------------------------
+/var/log/nginx/error.log
+----------------------------------------
+2026/03/30 16:46:54 [warn] 2031#2031: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:46:55 [warn] 2064#2064: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:46:55 [warn] 2065#2065: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:50:51 [error] 2069#2069: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:50:52 [error] 2069#2069: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:50:52 [error] 2069#2069: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:52:59 [error] 2069#2069: *6 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:56:32 [warn] 2875#2875: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:56:32 [warn] 2908#2908: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:56:32 [warn] 2910#2910: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 16:56:49 [error] 2913#2913: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:56:50 [error] 2913#2913: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 193.1.245.249, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com"
+2026/03/30 16:58:02 [error] 2913#2913: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 34.76.35.74, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "34.228.234.239"
+2026/03/30 17:01:32 [warn] 3630#3630: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:01:32 [warn] 3665#3665: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:01:32 [warn] 3666#3666: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:15:32 [warn] 4588#4588: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:15:32 [warn] 4622#4622: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:15:32 [warn] 4623#4623: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:16:01 [warn] 4625#4625: *11 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:19:29 [warn] 5217#5217: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:19:30 [warn] 5251#5251: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:19:30 [warn] 5252#5252: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:19:45 [warn] 5254#5254: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:22:36 [warn] 5788#5788: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:22:37 [warn] 5822#5822: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:22:37 [warn] 5823#5823: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:22:52 [warn] 5825#5825: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:24:44 [warn] 6355#6355: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:24:45 [warn] 6389#6389: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:24:45 [warn] 6390#6390: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:26:01 [warn] 6393#6393: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:28:51 [warn] 6392#6392: *4 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:30:30 [warn] 7029#7029: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:30:30 [warn] 7063#7063: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:30:30 [warn] 7064#7064: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:30:43 [warn] 7067#7067: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:31:28 [warn] 7066#7066: *3 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:37:01 [warn] 7725#7725: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:37:02 [warn] 7759#7759: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:37:02 [warn] 7760#7760: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:37:20 [warn] 7763#7763: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:37:43 [warn] 7762#7762: *2 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/2/00/0000000002 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+2026/03/30 17:42:13 [warn] 8410#8410: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:42:14 [warn] 8484#8484: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:42:14 [warn] 8485#8485: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2026/03/30 17:42:29 [warn] 8488#8488: *1 an upstream response is buffered to a temporary file /var/lib/nginx/tmp/proxy/1/00/0000000001 while reading upstream, client: 193.1.245.249, server: , request: "POST /admin/login/?next=/book/add/ HTTP/1.1", upstream: "http://127.0.0.1:8000/admin/login/?next=/book/add/", host: "bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com", referrer: "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/"
+
+
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.cursor.execute(sql, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return super().execute(query, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]: sqlite3.OperationalError: no such table: django_session
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]: The above exception was the direct cause of the following exception:
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]: Traceback (most recent call last):
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    response = get_response(request)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:               ^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return bound_method(*args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    response = view_func(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/admin/sites.py", line 441, in login
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return LoginView.as_view(**defaults)(request)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.dispatch(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return bound_method(*args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return view(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return bound_method(*args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    response = view_func(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return bound_method(*args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    response = view_func(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/auth/views.py", line 90, in dispatch
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return super().dispatch(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/generic/base.py", line 144, in dispatch
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return handler(request, *args, **kwargs)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.form_valid(form)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/auth/views.py", line 109, in form_valid
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    auth_login(self.request, form.get_user())
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/auth/__init__.py", line 118, in login
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    request.session.cycle_key()
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/sessions/backends/base.py", line 304, in cycle_key
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    self.create()
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/sessions/backends/db.py", line 50, in create
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    self._session_key = self._get_new_session_key()
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/sessions/backends/base.py", line 150, in _get_new_session_key
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    if not self.exists(session_key):
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/contrib/sessions/backends/db.py", line 46, in exists
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.model.objects.filter(session_key=session_key).exists()
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/query.py", line 1243, in exists
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.query.has_results(using=self.db)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/query.py", line 600, in has_results
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return compiler.has_results()
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 1530, in has_results
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return bool(self.execute_sql(SINGLE))
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:                ^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    cursor.execute(sql, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return super().execute(sql, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self._execute_with_wrappers(
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return executor(sql, params, many, context)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    with self.db.wrap_database_errors:
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    raise dj_exc_value.with_traceback(traceback) from exc_value
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return self.cursor.execute(sql, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:    return super().execute(query, params)
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mar 30 17:42:29 ip-172-31-16-208 web[8443]: django.db.utils.OperationalError: no such table: django_session
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+Requirement already satisfied: psycopg2-binary==2.9.11 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 37)) (2.9.11)
+Requirement already satisfied: pycodestyle==2.14.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 38)) (2.14.0)
+Requirement already satisfied: pycparser==2.23 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 39)) (2.23)
+Requirement already satisfied: pyflakes==3.4.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 40)) (3.4.0)
+Requirement already satisfied: Pygments==2.19.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 41)) (2.19.2)
+Requirement already satisfied: pylint==3.3.9 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 42)) (3.3.9)
+Requirement already satisfied: PyNaCl==1.6.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 43)) (1.6.2)
+Requirement already satisfied: pytest==8.4.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 44)) (8.4.2)
+Requirement already satisfied: pytest-django==4.11.1 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 45)) (4.11.1)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 46)) (2.9.0.post0)
+Requirement already satisfied: python-dotenv==1.2.1 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 47)) (1.2.1)
+Requirement already satisfied: PyYAML==6.0.3 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 48)) (6.0.3)
+Requirement already satisfied: requests==2.32.5 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 49)) (2.32.5)
+Requirement already satisfied: rich==14.3.3 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 50)) (14.3.3)
+Requirement already satisfied: semantic-version==2.10.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 51)) (2.10.0)
+Requirement already satisfied: six==1.17.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 52)) (1.17.0)
+Requirement already satisfied: sqlparse==0.5.5 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 53)) (0.5.5)
+Requirement already satisfied: stevedore==5.5.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 54)) (5.5.0)
+Requirement already satisfied: termcolor==2.5.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 55)) (2.5.0)
+Requirement already satisfied: tomli==2.4.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 56)) (2.4.0)
+Requirement already satisfied: tomlkit==0.14.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 57)) (0.14.0)
+Requirement already satisfied: typing_extensions==4.15.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 58)) (4.15.0)
+Requirement already satisfied: urllib3==1.26.20 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 59)) (1.26.20)
+Requirement already satisfied: wcwidth==0.2.14 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 60)) (0.2.14)
+Requirement already satisfied: whitenoise==6.11.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 61)) (6.11.0)
+Requirement already satisfied: wrapt==2.1.2 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 62)) (2.1.2)
+Requirement already satisfied: zipp==3.23.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from -r requirements.txt (line 63)) (3.23.0)
+Requirement already satisfied: setuptools>=20.0 in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (from awsebcli==3.27.1->-r requirements.txt (line 3)) (82.0.0)
+
+2026/03/30 17:45:15.983432 [INFO] Executing instruction: check Procfile
+2026/03/30 17:45:15.983493 [INFO] detected Procfile in application source bundle ...
+2026/03/30 17:45:15.983500 [INFO] Executing instruction: configure X-Ray
+2026/03/30 17:45:15.983504 [INFO] X-Ray is not enabled.
+2026/03/30 17:45:15.983508 [INFO] Executing instruction: configure proxy server
+2026/03/30 17:45:15.983526 [INFO] Recreating /var/proxy/staging/nginx
+2026/03/30 17:45:15.993838 [INFO] Executing instruction: configure healthd specific proxy conf
+2026/03/30 17:45:15.996002 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/30 17:45:16.066770 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2026/03/30 17:45:16.066807 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/30 17:45:16.084792 [INFO] Running command: systemctl is-active healthd.service
+2026/03/30 17:45:16.096621 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/30 17:45:16.111195 [INFO] Running command: systemctl stop healthd.service
+2026/03/30 17:45:16.211593 [INFO] Running command: systemctl disable healthd.service
+2026/03/30 17:45:16.497421 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+
+2026/03/30 17:45:16.497578 [INFO] Running command: systemctl daemon-reload
+2026/03/30 17:45:16.790763 [INFO] Running command: systemctl reset-failed
+2026/03/30 17:45:16.802558 [INFO] Running command: systemctl daemon-reload
+2026/03/30 17:45:17.079471 [INFO] Running command: systemctl reset-failed
+2026/03/30 17:45:17.088387 [INFO] Running command: systemctl is-enabled aws-eb.target
+2026/03/30 17:45:17.096890 [INFO] Running command: systemctl enable aws-eb.target
+2026/03/30 17:45:17.338174 [INFO] Running command: systemctl start aws-eb.target
+2026/03/30 17:45:17.347111 [INFO] Running command: systemctl enable healthd.service
+2026/03/30 17:45:17.630820 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+
+2026/03/30 17:45:17.630856 [INFO] Running command: systemctl show -p PartOf healthd.service
+2026/03/30 17:45:17.642202 [INFO] Running command: systemctl is-active healthd.service
+2026/03/30 17:45:17.650370 [INFO] Running command: systemctl start healthd.service
+2026/03/30 17:45:17.739462 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2026/03/30 17:45:17.740650 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2026/03/30 17:45:17.741875 [INFO] Executing instruction: configure log streaming
+2026/03/30 17:45:17.741891 [INFO] log streaming is not enabled
+2026/03/30 17:45:17.741895 [INFO] disable log stream
+2026/03/30 17:45:17.741909 [INFO] Running command: systemctl show -p PartOf amazon-cloudwatch-agent.service
+2026/03/30 17:45:17.761561 [INFO] Running command: systemctl stop amazon-cloudwatch-agent.service
+2026/03/30 17:45:17.779779 [INFO] Executing instruction: GetToggleForceRotate
+2026/03/30 17:45:17.779805 [INFO] Checking if logs need forced rotation
+2026/03/30 17:45:17.779826 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1
+2026/03/30 17:45:18.248412 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBBeanstalkMetadata --region us-east-1
+2026/03/30 17:45:18.678867 [INFO] Generating rsyslog config from Procfile
+2026/03/30 17:45:18.680986 [INFO] Running command: systemctl restart rsyslog.service
+2026/03/30 17:45:18.766783 [INFO] Executing instruction: PostBuildEbExtension
+2026/03/30 17:45:18.766820 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2026/03/30 17:45:18.766839 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPostBuild
+2026/03/30 17:45:19.625915 [INFO] Error occurred during build: Command 01_migrate failed
+
+2026/03/30 17:45:19.625947 [ERROR] An error occurred during execution of command [app-deploy] - [PostBuildEbExtension]. Stop running the command. Error: container commands build failed. Please refer to /var/log/cfn-init.log for more details. 
+
+2026/03/30 17:45:19.625951 [INFO] Executing cleanup logic
+2026/03/30 17:45:19.626036 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment used the commands in your 'Procfile' to initiate startup of your application.","timestamp":1774892715983,"severity":"INFO"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1774892719625,"severity":"ERROR"}]}]}
+
+2026/03/30 17:45:19.627150 [INFO] Platform Engine finished execution on command: app-deploy
+
+2026/03/30 17:46:51.717892 [INFO] Starting...
+2026/03/30 17:46:51.717950 [INFO] Starting EBPlatform-PlatformEngine
+2026/03/30 17:46:51.717972 [INFO] reading event message file
+2026/03/30 17:46:51.718362 [INFO] Engine received EB command cfn-hup-exec
+
+2026/03/30 17:46:51.833784 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBAutoScalingGroup --region us-east-1
+2026/03/30 17:46:52.162045 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:621484386362:stack/awseb-e-qwkrcnq9s7-stack/674305c0-195b-11f1-80e9-0e3b8621db3f -r AWSEBBeanstalkMetadata --region us-east-1
+2026/03/30 17:46:52.510071 [INFO] checking whether command tail-log is applicable to this instance...
+2026/03/30 17:46:52.510083 [INFO] this command is applicable to the instance, thus instance should execute command
+2026/03/30 17:46:52.510086 [INFO] Engine command: (tail-log)
+
+2026/03/30 17:46:52.510136 [INFO] Executing instruction: GetTailLogs
+2026/03/30 17:46:52.510139 [INFO] Tail Logs...
+2026/03/30 17:46:52.510953 [INFO] Running command: tail -n 100 /var/log/nginx/error.log
+2026/03/30 17:46:52.513449 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2026/03/30 17:46:52.515572 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+
+
+----------------------------------------
+/var/log/nginx/access.log
+----------------------------------------
+193.1.245.249 - - [30/Mar/2026:17:06:09 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:09 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:09 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:09 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:11 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:16 +0000] "GET /book/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:16 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:17 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 200 4351 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:06:35 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:07 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:12 +0000] "GET / HTTP/1.1" 200 3000 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:14 +0000] "GET /book/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:14 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:15 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:24 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 200 4351 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:25 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 200 4351 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:35 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:13:36 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:44 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /book/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:15:51 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:16:01 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+93.174.93.12 - - [30/Mar/2026:17:18:08 +0000] "GET / HTTP/1.0" 200 3000 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1" "-"
+193.1.245.249 - - [30/Mar/2026:17:19:45 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+204.76.203.206 - - [30/Mar/2026:17:20:53 +0000] "GET / HTTP/1.1" 200 3000 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46" "-"
+193.1.245.249 - - [30/Mar/2026:17:22:52 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:26:02 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:28:51 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:30:43 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:07 +0000] "GET / HTTP/1.1" 200 3000 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /book/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:10 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 200 4348 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:19 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:31:28 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+1.234.19.107 - - [30/Mar/2026:17:36:39 +0000] "GET /admin/config.php HTTP/1.0" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:20 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:32 +0000] "GET / HTTP/1.1" 200 3000 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:34 +0000] "GET /book/add/ HTTP/1.1" 302 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:34 +0000] "GET /admin/login/?next=/book/add/ HTTP/1.1" 200 4190 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/css/base.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/css/login.css HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/js/theme.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:35 +0000] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:37:44 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+193.1.245.249 - - [30/Mar/2026:17:42:29 +0000] "POST /admin/login/?next=/book/add/ HTTP/1.1" 500 203822 "http://bookshop-env.eba-68339ps8.us-east-1.elasticbeanstalk.com/admin/login/?next=/book/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" "-"
+
+
