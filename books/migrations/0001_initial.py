@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.db import migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -11,20 +11,20 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunSQL(
-            """CREATE TABLE IF NOT EXISTS "books_book" (
-                "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-                "title" varchar(200) NOT NULL,
-                "author" varchar(100) NOT NULL,
-                "isbn" varchar(13) NOT NULL UNIQUE,
-                "price" decimal NOT NULL,
-                "stock" integer NOT NULL,
-                "genre" varchar(20) NOT NULL,
-                "description" text NOT NULL,
-                "published_date" date NULL,
-                "created_at" datetime NOT NULL,
-                "updated_at" datetime NOT NULL
-            )""",
-            reverse_sql='DROP TABLE IF EXISTS "books_book"'
+        migrations.CreateModel(
+            name='Book',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=200)),
+                ('author', models.CharField(max_length=100)),
+                ('isbn', models.CharField(max_length=13, unique=True)),
+                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('stock', models.IntegerField()),
+                ('genre', models.CharField(max_length=20)),
+                ('description', models.TextField()),
+                ('published_date', models.DateField(blank=True, null=True)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(auto_now=True)),
+            ],
         ),
     ]
