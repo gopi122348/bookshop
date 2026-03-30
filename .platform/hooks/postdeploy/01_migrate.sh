@@ -16,3 +16,5 @@ u.is_staff = True
 u.save()
 print('Admin ready')
 "
+chmod 664 /var/app/current/db.sqlite3
+chown webapp:webapp /var/app/current/db.sqlite3
