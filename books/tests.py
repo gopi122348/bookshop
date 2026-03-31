@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Book
 
-TEST_PASSWORD = "admin1234"  # noqa: S105
+TEST_PASSWORD = "admin1234"  # NOSONAR
 
 class BookModelTest(TestCase):
     """Unit tests for the Book model."""
@@ -36,7 +36,7 @@ class BookViewTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.staff_user = User.objects.create_user(
-            username='admin', password=TEST_PASSWORD, is_staff=True
+            username='admin', password=TEST_PASSWORD, is_staff=True  # NOSONAR
         )
         self.book = Book.objects.create(
             title='View Test Book', author='View Author',
@@ -75,4 +75,3 @@ class BookViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(
             Book.objects.filter(pk=self.book.pk).exists())
-            
