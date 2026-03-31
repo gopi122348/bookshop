@@ -1,3 +1,4 @@
+"""Database models for books and orders."""
 # Book database model with validation constraints
 from django.contrib.auth.models import User
 from django.db import models

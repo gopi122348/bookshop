@@ -1,3 +1,4 @@
+"""App configuration for the books app."""
 from django.apps import AppConfig
 
 

@@ -1,3 +1,4 @@
+"""Forms for books and orders."""
 
 import re                            #regular expression
 from django import forms

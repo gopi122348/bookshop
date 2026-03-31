@@ -1,12 +1,13 @@
+"""Management command to create admin and sample books."""
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 from books.models import Book
 
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
-        U = get_user_model()
-        if not U.objects.filter(username='admin').exists():
-            U.objects.create_superuser('admin', 'admin@example.com', 'Admin1234!')
+        admin_user = get_user_model()
+        if not admin_user.objects.filter(username='admin').exists():
+            admin_user.objects.create_superuser('admin', 'admin@example.com', 'Admin1234!')
             self.stdout.write('Superuser created.')
 
         if Book.objects.count() == 0:
