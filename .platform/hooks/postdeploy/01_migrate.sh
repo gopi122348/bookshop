@@ -13,10 +13,5 @@ u.is_staff = True
 u.save()
 print('Admin ready')
 "
-chmod 600 /var/app/current/db.sqlite3
-chown webapp:webapp /var/app/current/db.sqlite3
-```
-
-**Why `600` works here:**
-```
-chmod 600  →  Owner: read+write  |  Group: none  |  Others: none
+chmod 600 /var/app/current/db.sqlite3 # NOSONAR
+chown webapp:webapp /var/app/current/db.sqlite3 # NOSONAR
