@@ -341,3 +341,4 @@ def checkout(request):
     request.session['cart'] = {}
     messages.success(request, "🎉 Order placed successfully!")
     return redirect('order_history')
+    

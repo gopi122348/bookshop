@@ -84,3 +84,4 @@ class BookViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(
             Book.objects.filter(pk=self.book.pk).exists())
+            

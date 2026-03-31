@@ -138,3 +138,4 @@ class OrderItem(models.Model):
 
     def subtotal(self):
         return self.price * self.quantity
+        
