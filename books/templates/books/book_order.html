@@ -2,34 +2,80 @@
 {% block title %}Order {{ book.title }}{% endblock %}
 {% block content %}
 <div class="row justify-content-center">
-  <div class="col-md-5">
+  <div class="col-md-6">
     <div class="card shadow-sm">
       <div class="card-header bg-dark text-white">
-        <h4>Order Book</h4>
+        <h4>&#128722; Order Book</h4>
       </div>
       <div class="card-body">
         <h5>{{ book.title }}</h5>
         <p class="text-muted">by {{ book.author }}</p>
-        <p><strong>Price:</strong> £{{ book.price }}</p>
+        <p><strong>Price:</strong> &#163;{{ book.price }}</p>
         <p><strong>In Stock:</strong> {{ book.stock }} copies</p>
         <hr>
-        <form method="post">
+        <form method="post" novalidate>
           {% csrf_token %}
+
           <div class="mb-3">
             <label class="form-label fw-bold" for="{{ form.quantity.id_for_label }}">Quantity</label>
             {{ form.quantity }}
-            {% if form.quantity.errors %}
-              {% for error in form.quantity.errors %}
-                <div class="text-danger mt-1">✗ {{ error }}</div>
-              {% endfor %}
-            {% endif %}
+            {% for error in form.quantity.errors %}
+              <div class="text-danger mt-1">&#10007; {{ error }}</div>
+            {% endfor %}
           </div>
+
+          {% if form.saved_address %}
+          <div class="mb-3">
+            <label class="form-label fw-bold">&#128205; Deliver to</label>
+            <div class="border rounded p-3 bg-light">
+              {% for radio in form.saved_address %}
+              <div class="form-check mb-2">
+                {{ radio.tag }}
+                <label class="form-check-label" for="{{ radio.id_for_label }}">
+                  {{ radio.choice_label }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+            {% for error in form.saved_address.errors %}
+            <div class="text-danger small">&#10007; {{ error }}</div>
+            {% endfor %}
+            <a href="{% url 'address_list' %}" class="btn btn-sm btn-outline-secondary mt-2">
+              &#9998; Manage addresses
+            </a>
+          </div>
+          <hr>
+          <p class="text-muted small fw-bold">OR enter a new address:</p>
+          {% endif %}
+
+          <div class="mb-3">
+            <label class="form-label fw-bold" for="{{ form.address.id_for_label }}">
+              {% if form.saved_address %}New address{% else %}Delivery address{% endif %}
+            </label>
+            {{ form.address }}
+            {% for error in form.address.errors %}
+            <div class="text-danger small">&#10007; {{ error }}</div>
+            {% endfor %}
+          </div>
+
+          {% if form.save_address %}
+          <div class="mb-3 border rounded p-3 bg-light">
+            <div class="form-check">
+              {{ form.save_address }}
+              <label class="form-check-label" for="{{ form.save_address.id_for_label }}">
+                {{ form.save_address.label }}
+              </label>
+            </div>
+            <div class="mt-2">
+              <label class="form-label small fw-bold">Label</label>
+              {{ form.address_label }}
+            </div>
+          </div>
+          {% endif %}
+
           <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-success">
-              Place Order
-            </button>
-            <a href="{% url 'book_list' %}" 
-               class="btn btn-outline-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success">&#9989; Place Order</button>
+            <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Cancel</a>
           </div>
         </form>
       </div>

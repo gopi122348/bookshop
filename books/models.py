@@ -70,6 +70,48 @@ class Book(models.Model):
         return self.stock > 0
 
 
+class Address(models.Model):
+    """A saved delivery address for a user."""
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='addresses'
+    )
+
+    label = models.CharField(
+        max_length=50,
+        default='Home',
+        help_text="A short label, e.g. Home or Work"
+    )
+
+    full_name = models.CharField(max_length=100)
+    address_line1 = models.CharField(max_length=200)
+    address_line2 = models.CharField(max_length=200, blank=True)
+    city = models.CharField(max_length=100)
+    postcode = models.CharField(max_length=20)
+    country = models.CharField(max_length=100, default='Ireland')
+
+    is_default = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-is_default', '-created_at']
+        verbose_name_plural = 'addresses'
+
+    def __str__(self):
+        return f"{self.label} – {self.address_line1}, {self.city}"
+
+    def as_text(self):
+        """Return the full address as a plain-text string."""
+        parts = [self.full_name, self.address_line1]
+        if self.address_line2:
+            parts.append(self.address_line2)
+        parts += [self.city, self.postcode, self.country]
+        return ', '.join(parts)
+
+
 class Order(models.Model):
     """A customer order, always linked to a registered user."""
 
@@ -139,4 +181,3 @@ class OrderItem(models.Model):
 
     def subtotal(self):
         return self.price * self.quantity
-        

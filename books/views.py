@@ -5,8 +5,8 @@ from django.db.models import Q, Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.admin.views.decorators import staff_member_required
-from .models import Book, Order, OrderItem
-from .forms import BookForm, OrderForm
+from .models import Book, Order, OrderItem, Address
+from .forms import BookForm, OrderForm, CheckoutForm, AddressForm
 
 FORM_ERROR_MESSAGE = "Please correct the errors below."
 
@@ -137,7 +137,7 @@ def book_order(request, pk):
     """Place an order for a book."""
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
-        form = OrderForm(request.POST)
+        form = OrderForm(request.POST, user=request.user)
         if form.is_valid():
             quantity = form.cleaned_data["quantity"]
             if quantity > book.stock:
@@ -148,14 +148,34 @@ def book_order(request, pk):
                 return render(
                     request,
                     "books/book_order.html",
-                    {
-                        "form": form,
-                        "book": book,
-                    },
+                    {"form": form, "book": book},
                 )
+
+            # Resolve delivery address
+            saved_id = form.cleaned_data.get("saved_address")
+            if saved_id:
+                addr_obj = get_object_or_404(Address, pk=saved_id, user=request.user)
+                delivery_address = addr_obj.as_text()
+            else:
+                delivery_address = form.cleaned_data.get("address", "")
+                # Optionally save this new address
+                if form.cleaned_data.get("save_address") and delivery_address:
+                    if form.cleaned_data.get("is_default_new"):
+                        Address.objects.filter(user=request.user).update(is_default=False)
+                    Address.objects.create(
+                        user=request.user,
+                        label=form.cleaned_data.get("address_label") or "Home",
+                        full_name=request.user.get_full_name() or request.user.username,
+                        address_line1=delivery_address,
+                        city="",
+                        postcode="",
+                    )
+
             order = Order.objects.create(
                 user=request.user,
                 customer_name=request.user.username,
+                customer_email=request.user.email or "",
+                address=delivery_address,
                 total_price=book.price * quantity,
                 status="pending",
             )
@@ -173,14 +193,11 @@ def book_order(request, pk):
             )
             return redirect("book_list")
     else:
-        form = OrderForm()
+        form = OrderForm(user=request.user)
     return render(
         request,
         "books/book_order.html",
-        {
-            "form": form,
-            "book": book,
-        },
+        {"form": form, "book": book},
     )
 
 
@@ -234,7 +251,7 @@ def cart_remove(request, pk):
     cart = request.session.get("cart", {})
     cart.pop(str(pk), None)
     request.session["cart"] = cart
-    return redirect("cart")
+    return redirect("cart_view")
 
 
 @login_required
@@ -254,29 +271,118 @@ def checkout(request):
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "Your cart is empty.")
-        return redirect('cart')
+        return redirect('cart_view')
+
+    # Build cart items for display
+    items = []
+    total = 0
     for book_id, qty in cart.items():
         book = get_object_or_404(Book, pk=int(book_id))
-        if qty > book.stock:
-            messages.error(
-                request,
-                f'Only {book.stock} copies of "{book.title}" available.'
-            )
-            return redirect('cart')
-        order = Order.objects.create(
-            user=request.user,
-            customer_name=request.user.username,
-            total_price=book.price * qty,
-            status='pending',
-        )
-        OrderItem.objects.create(
-            order=order,
-            book=book,
-            quantity=qty,
-            price=book.price,
-        )
-        book.stock -= qty
-        book.save()
-    request.session['cart'] = {}
-    messages.success(request, "Order placed successfully!")
-    return redirect('order_history')
+        subtotal = book.price * qty
+        total += subtotal
+        items.append({'book': book, 'title': book.title, 'qty': qty, 'subtotal': subtotal})
+
+    if request.method == 'POST':
+        form = CheckoutForm(request.POST, user=request.user)
+        if form.is_valid():
+            # Resolve delivery address
+            saved_id = form.cleaned_data.get('saved_address')
+            if saved_id:
+                addr_obj = get_object_or_404(Address, pk=saved_id, user=request.user)
+                delivery_address = addr_obj.as_text()
+            else:
+                delivery_address = form.cleaned_data.get('address', '')
+                if form.cleaned_data.get('save_address') and delivery_address:
+                    Address.objects.create(
+                        user=request.user,
+                        label=form.cleaned_data.get('address_label') or 'Home',
+                        full_name=form.cleaned_data.get('customer_name', ''),
+                        address_line1=delivery_address,
+                        city='',
+                        postcode='',
+                    )
+
+            # Stock check
+            for book_id, qty in cart.items():
+                book = get_object_or_404(Book, pk=int(book_id))
+                if qty > book.stock:
+                    messages.error(
+                        request,
+                        f'Only {book.stock} copies of "{book.title}" available.'
+                    )
+                    return redirect('cart_view')
+
+            # Create orders
+            for book_id, qty in cart.items():
+                book = get_object_or_404(Book, pk=int(book_id))
+                order = Order.objects.create(
+                    user=request.user,
+                    customer_name=form.cleaned_data.get('customer_name', request.user.username),
+                    customer_email=form.cleaned_data.get('customer_email', request.user.email or ''),
+                    customer_phone=form.cleaned_data.get('customer_phone', ''),
+                    address=delivery_address,
+                    total_price=book.price * qty,
+                    status='pending',
+                )
+                OrderItem.objects.create(
+                    order=order,
+                    book=book,
+                    quantity=qty,
+                    price=book.price,
+                )
+                book.stock -= qty
+                book.save()
+
+            request.session['cart'] = {}
+            messages.success(request, "Order placed successfully!")
+            return redirect('order_history')
+    else:
+        form = CheckoutForm(user=request.user)
+
+    return render(request, 'books/checkout.html', {
+        'form': form,
+        'items': items,
+        'total': total,
+    })
+
+
+@login_required
+def address_list(request):
+    """Show and manage saved addresses."""
+    addresses = Address.objects.filter(user=request.user)
+    form = AddressForm()
+    if request.method == 'POST':
+        form = AddressForm(request.POST)
+        if form.is_valid():
+            address = form.save(commit=False)
+            address.user = request.user
+            if address.is_default:
+                Address.objects.filter(user=request.user).update(is_default=False)
+            address.save()
+            messages.success(request, 'Address saved!')
+            return redirect('address_list')
+    return render(request, 'books/address_list.html', {
+        'addresses': addresses,
+        'form': form,
+    })
+
+
+@login_required
+def address_delete(request, pk):
+    """Delete a saved address."""
+    address = get_object_or_404(Address, pk=pk, user=request.user)
+    if request.method == 'POST':
+        address.delete()
+        messages.success(request, 'Address deleted.')
+    return redirect('address_list')
+
+
+@login_required
+def address_set_default(request, pk):
+    """Set an address as the default."""
+    address = get_object_or_404(Address, pk=pk, user=request.user)
+    Address.objects.filter(user=request.user).update(is_default=False)
+    address.is_default = True
+    address.save()
+    messages.success(request, f'"{address.label}" set as default address.')
+    return redirect('address_list')
