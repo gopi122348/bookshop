@@ -19,7 +19,7 @@ body { background-color: #f8f9fa; }
         <a class="nav-link text-white" href="{% url 'book_list' %}">All Books</a>
         {% if user.is_authenticated %}
             <span class="nav-link text-secondary">{{ user.username }}</span>
-            <a class="nav-link text-white" href="{% url 'cart' %}">🛒 Cart</a>
+            <a class="nav-link text-white" href="{% url 'cart_view' %}">🛒 Cart</a>
             <a class="nav-link text-white" href="{% url 'order_history' %}">📦 Orders</a>
             <a class="nav-link btn btn-outline-light text-white ms-2 px-3" href="{% url 'logout' %}">Log Out</a>
         {% else %}
