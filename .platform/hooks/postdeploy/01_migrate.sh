@@ -2,11 +2,8 @@
 set -e
 source /var/app/venv/*/bin/activate
 cd /var/app/current
-
 rm -f /var/app/current/db.sqlite3
-
 python manage.py migrate --noinput
-
 python manage.py shell -c "
 from django.contrib.auth.models import User
 u, created = User.objects.get_or_create(username='admin')
@@ -16,5 +13,5 @@ u.is_staff = True
 u.save()
 print('Admin ready')
 "
-chmod 664 /var/app/current/db.sqlite3
+chmod 644 /var/app/current/db.sqlite3
 chown webapp:webapp /var/app/current/db.sqlite3

@@ -13,7 +13,7 @@ try:
         conn.execute(f'DROP TABLE IF EXISTS "{table}"')
     conn.commit()
     conn.close()
-except:
+except Exception:
     pass
 
 print("DB cleanup done")
