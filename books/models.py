@@ -6,6 +6,7 @@ from django.utils import timezone
 
 
 class Book(models.Model):
+    """A book available in the bookshop."""
 
     GENRE_CHOICES = [
         ('fiction', 'Fiction'),
@@ -59,17 +60,21 @@ class Book(models.Model):
     )
 
     class Meta:
+        """Meta options for the Book model."""
 
         ordering = ['title']
 
     def __str__(self):
+        """Return a human-readable string representation of the book."""
         return f"{self.title} by {self.author}"
 
     def is_in_stock(self):
+        """Return True if at least one copy is available."""
         return self.stock > 0
 
 
 class Address(models.Model):
+    """A saved delivery address belonging to a registered user."""
 
     user = models.ForeignKey(
         User,
@@ -95,14 +100,17 @@ class Address(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
+        """Meta options for the Address model."""
 
         ordering = ['-is_default', '-created_at']
         verbose_name_plural = 'addresses'
 
     def __str__(self):
+        """Return a short label and first line for this address."""
         return f"{self.label} – {self.address_line1}, {self.city}"
 
     def as_text(self):
+        """Return the full address as a plain-text string."""
         parts = [self.full_name, self.address_line1]
         if self.address_line2:
             parts.append(self.address_line2)
@@ -111,6 +119,7 @@ class Address(models.Model):
 
 
 class Order(models.Model):
+    """A customer order, always linked to a registered user."""
 
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -146,14 +155,17 @@ class Order(models.Model):
     )
 
     class Meta:
+        """Meta options for the Order model."""
 
         ordering = ['-created_at']
 
     def __str__(self):
+        """Return a human-readable representation of the order."""
         return f"Order #{self.pk} - {self.customer_name}"
 
 
 class OrderItem(models.Model):
+    """A single book line item within an order."""
 
     order = models.ForeignKey(
         Order,
@@ -174,7 +186,9 @@ class OrderItem(models.Model):
     )
 
     def __str__(self):
+        """Return quantity and book title for this line item."""
         return f"{self.quantity}x {self.book.title}"
 
     def subtotal(self):
+        """Return the total price for this line item."""
         return self.price * self.quantity
