@@ -1,5 +1,4 @@
-# Database models for books and orders.
-# Book database model with validation constraints
+"""Database models for books, addresses, and orders."""
 from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -60,6 +59,7 @@ class Book(models.Model):
     )
 
     class Meta:
+
         ordering = ['title']
 
     def __str__(self):
@@ -95,6 +95,7 @@ class Address(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
+
         ordering = ['-is_default', '-created_at']
         verbose_name_plural = 'addresses'
 
@@ -102,7 +103,6 @@ class Address(models.Model):
         return f"{self.label} – {self.address_line1}, {self.city}"
 
     def as_text(self):
-        """Return the full address as a plain-text string."""
         parts = [self.full_name, self.address_line1]
         if self.address_line2:
             parts.append(self.address_line2)
@@ -146,6 +146,7 @@ class Order(models.Model):
     )
 
     class Meta:
+
         ordering = ['-created_at']
 
     def __str__(self):

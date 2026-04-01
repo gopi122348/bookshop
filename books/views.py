@@ -1,4 +1,4 @@
-#books/views.py - CRUD views for Django BookShop.
+"""books/views.py - CRUD and order views for Django BookShop."""
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q, Sum
@@ -12,6 +12,7 @@ FORM_ERROR_MESSAGE = "Please correct the errors below."
 
 
 def book_list(request):
+    """Show all books with optional search, genre filter, and recommended section."""
     query = request.GET.get("q", "").strip()
     genre_filter = request.GET.get("genre", "")
     books = Book.objects.all()
@@ -100,7 +101,6 @@ def register(request):
     return render(request, "registration/register.html", {"form": form})
 
 
-
 def _resolve_delivery_address(form, user):
     saved_id = form.cleaned_data.get("saved_address")
     if saved_id:
@@ -122,8 +122,6 @@ def _maybe_save_address(form, user, delivery_address):
         city="",
         postcode="",
     )
-
-
 
 
 def _create_book_order(request, book, form):
@@ -217,8 +215,6 @@ def cart_remove(request, pk):
 def order_history(request):
     orders = Order.objects.filter(user=request.user).order_by("-created_at")
     return render(request, "books/order_history.html", {"orders": orders})
-
-
 
 
 def _build_cart_items(cart):
