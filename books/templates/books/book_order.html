@@ -5,7 +5,7 @@
   <div class="col-md-6">
     <div class="card shadow-sm">
       <div class="card-header bg-dark text-white">
-        <h4>&#128722; Order Book</h4>
+        <h4>Order Book</h4>
       </div>
       <div class="card-body">
         <h5>{{ book.title }}</h5>
@@ -15,18 +15,16 @@
         <hr>
         <form method="post" novalidate>
           {% csrf_token %}
-
           <div class="mb-3">
             <label class="form-label fw-bold" for="{{ form.quantity.id_for_label }}">Quantity</label>
             {{ form.quantity }}
             {% for error in form.quantity.errors %}
-              <div class="text-danger mt-1">&#10007; {{ error }}</div>
+              <div class="text-danger mt-1">{{ error }}</div>
             {% endfor %}
           </div>
-
           {% if form.saved_address %}
           <div class="mb-3">
-            <label class="form-label fw-bold">&#128205; Deliver to</label>
+            <label class="form-label fw-bold" for="saved_address">Deliver to</label>
             <div class="border rounded p-3 bg-light">
               {% for radio in form.saved_address %}
               <div class="form-check mb-2">
@@ -38,26 +36,24 @@
               {% endfor %}
             </div>
             {% for error in form.saved_address.errors %}
-            <div class="text-danger small">&#10007; {{ error }}</div>
+            <div class="text-danger small">{{ error }}</div>
             {% endfor %}
             <a href="{% url 'address_list' %}" class="btn btn-sm btn-outline-secondary mt-2">
-              &#9998; Manage addresses
+              Manage addresses
             </a>
           </div>
           <hr>
           <p class="text-muted small fw-bold">OR enter a new address:</p>
           {% endif %}
-
           <div class="mb-3">
             <label class="form-label fw-bold" for="{{ form.address.id_for_label }}">
               {% if form.saved_address %}New address{% else %}Delivery address{% endif %}
             </label>
             {{ form.address }}
             {% for error in form.address.errors %}
-            <div class="text-danger small">&#10007; {{ error }}</div>
+            <div class="text-danger small">{{ error }}</div>
             {% endfor %}
           </div>
-
           {% if form.save_address %}
           <div class="mb-3 border rounded p-3 bg-light">
             <div class="form-check">
@@ -67,15 +63,16 @@
               </label>
             </div>
             <div class="mt-2">
-              <label class="form-label small fw-bold">Label</label>
+              <label class="form-label small fw-bold" for="{{ form.address_label.id_for_label }}">Label</label>
               {{ form.address_label }}
             </div>
           </div>
           {% endif %}
-
+          <p class="text-muted small mt-3">
+            <strong>Cash on Delivery</strong> — pay when your order arrives.
+          </p>
           <div class="d-flex gap-2">
-            <p class='text-muted small mt-3'><button type="submit" class="btn btn-success">&#9989; Place Order</button>#128666; <strong>Cash on Delivery</strong> — pay when your order arrives.</p>
-            <button type="submit" class="btn btn-success"><button type="submit" class="btn btn-success">&#9989; Place Order</button>#9989; Place Order</button>
+            <button type="submit" class="btn btn-success">Place Order</button>
             <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Cancel</a>
           </div>
         </form>

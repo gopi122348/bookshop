@@ -2,100 +2,102 @@
 {% block title %}Checkout{% endblock %}
 {% block content %}
 <div class='row'>
- <div class='col-md-7'>
-  <div class='card shadow-sm mb-3'>
-   <div class='card-header bg-dark text-white'>
-    <h4>&#128230; Delivery Details</h4>
-   </div>
-   <div class='card-body'>
-    <form method='post' novalidate>
-     {% csrf_token %}
-
-     {% if form.saved_address %}
-     <div class='mb-4'>
-      <label class='form-label fw-bold'>&#128205; Choose a saved address</label>
-      <div class='border rounded p-3 bg-light'>
-       {% for radio in form.saved_address %}
-       <div class='form-check mb-2'>
-        {{ radio.tag }}
-        <label class='form-check-label' for='{{ radio.id_for_label }}'>
-         {{ radio.choice_label }}
-        </label>
-       </div>
-       {% endfor %}
+  <div class='col-md-7'>
+    <div class='card shadow-sm mb-3'>
+      <div class='card-header bg-dark text-white'>
+        <h4>Delivery Details</h4>
       </div>
-      {% for error in form.saved_address.errors %}
-      <div class='text-danger small'>&#10007; {{ error }}</div>
-      {% endfor %}
-      <div class='mt-2'>
-       <a href='{% url "address_list" %}' class='btn btn-sm btn-outline-secondary'>
-        &#9998; Manage saved addresses
-       </a>
+      <div class='card-body'>
+        <form method='post' novalidate>
+          {% csrf_token %}
+          {% if form.saved_address %}
+          <div class='mb-4'>
+            <label class='form-label fw-bold' for='saved_address'>Choose a saved address</label>
+            <div class='border rounded p-3 bg-light'>
+              {% for radio in form.saved_address %}
+              <div class='form-check mb-2'>
+                {{ radio.tag }}
+                <label class='form-check-label' for='{{ radio.id_for_label }}'>
+                  {{ radio.choice_label }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+            {% for error in form.saved_address.errors %}
+            <div class='text-danger small'>{{ error }}</div>
+            {% endfor %}
+            <div class='mt-2'>
+              <a href='{% url "address_list" %}' class='btn btn-sm btn-outline-secondary'>
+                Manage saved addresses
+              </a>
+            </div>
+          </div>
+          <hr>
+          <p class='text-muted small fw-bold'>OR fill in a new address below:</p>
+          {% endif %}
+          <div class='mb-3'>
+            <label class='form-label fw-bold' for='{{ form.customer_name.id_for_label }}'>{{ form.customer_name.label }}</label>
+            {{ form.customer_name }}
+            {% for error in form.customer_name.errors %}
+            <div class='text-danger small'>{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class='mb-3'>
+            <label class='form-label fw-bold' for='{{ form.customer_email.id_for_label }}'>{{ form.customer_email.label }}</label>
+            {{ form.customer_email }}
+            {% for error in form.customer_email.errors %}
+            <div class='text-danger small'>{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class='mb-3'>
+            <label class='form-label fw-bold' for='{{ form.customer_phone.id_for_label }}'>{{ form.customer_phone.label }}</label>
+            {{ form.customer_phone }}
+          </div>
+          <div class='mb-3'>
+            <label class='form-label fw-bold' for='{{ form.address.id_for_label }}'>New delivery address</label>
+            {{ form.address }}
+            {% for error in form.address.errors %}
+            <div class='text-danger small'>{{ error }}</div>
+            {% endfor %}
+          </div>
+          {% if form.save_address %}
+          <div class='mb-3 border rounded p-3 bg-light'>
+            <div class='form-check'>
+              {{ form.save_address }}
+              <label class='form-check-label' for='{{ form.save_address.id_for_label }}'>{{ form.save_address.label }}</label>
+            </div>
+            <div class='mt-2'>
+              <label class='form-label small fw-bold' for='{{ form.address_label.id_for_label }}'>Address label</label>
+              {{ form.address_label }}
+            </div>
+          </div>
+          {% endif %}
+          <p class='text-muted small mt-3'>
+            <strong>Cash on Delivery</strong> — payment is collected when your order arrives. No online payment needed.
+          </p>
+          <button type='submit' class='btn btn-success btn-lg w-100'>Place Order</button>
+        </form>
       </div>
-     </div>
-     <hr>
-     <p class='text-muted small fw-bold'>OR fill in a new address below:</p>
-     {% endif %}
-
-     <div class='mb-3'>
-      <label class='form-label fw-bold' for='{{ form.customer_name.id_for_label }}'>{{ form.customer_name.label }}</label>
-      {{ form.customer_name }}
-      {% for error in form.customer_name.errors %}<div class='text-danger small'>&#10007; {{ error }}</div>{% endfor %}
-     </div>
-
-     <div class='mb-3'>
-      <label class='form-label fw-bold' for='{{ form.customer_email.id_for_label }}'>{{ form.customer_email.label }}</label>
-      {{ form.customer_email }}
-      {% for error in form.customer_email.errors %}<div class='text-danger small'>&#10007; {{ error }}</div>{% endfor %}
-     </div>
-
-     <div class='mb-3'>
-      <label class='form-label fw-bold' for='{{ form.customer_phone.id_for_label }}'>{{ form.customer_phone.label }}</label>
-      {{ form.customer_phone }}
-     </div>
-
-     <div class='mb-3'>
-      <label class='form-label fw-bold' for='{{ form.address.id_for_label }}'>New delivery address</label>
-      {{ form.address }}
-      {% for error in form.address.errors %}<div class='text-danger small'>&#10007; {{ error }}</div>{% endfor %}
-     </div>
-
-     {% if form.save_address %}
-     <div class='mb-3 border rounded p-3 bg-light'>
-      <div class='form-check'>
-       {{ form.save_address }}
-       <label class='form-check-label' for='{{ form.save_address.id_for_label }}'>{{ form.save_address.label }}</label>
-      </div>
-      <div class='mt-2'>
-       <label class='form-label small fw-bold'>Address label</label>
-       {{ form.address_label }}
-      </div>
-     </div>
-     {% endif %}
-
-     <div class='alert alert-info mb-3'><button type='submit' class='btn btn-success btn-lg w-100'> Place Order</button><strong>Cash on Delivery</strong> — payment is collected when your order arrives. No online payment needed.</div>
-     <button type='submit' class='btn btn-success btn-lg w-100'><button type='submit' class='btn btn-success btn-lg w-100'>Place Order</button>Place Order</button>
-    </form>
-   </div>
+    </div>
   </div>
- </div>
-
- <div class='col-md-5'>
-  <div class='card shadow-sm'>
-   <div class='card-header bg-secondary text-white'><h5>Order Summary</h5></div>
-   <ul class='list-group list-group-flush'>
-   {% for item in items %}
-    <li class='list-group-item d-flex justify-content-between'>
-     <span>{{ item.title }} <small class='text-muted'>&times; {{ item.qty }}</small></span>
-     <strong>&#163;{{ item.subtotal }}</strong>
-    </li>
-   {% endfor %}
-   <li class='list-group-item d-flex justify-content-between bg-light fw-bold'>
-    <span>Total</span><span>&#163;{{ total }}</span>
-   </li>
-   </ul>
+  <div class='col-md-5'>
+    <div class='card shadow-sm'>
+      <div class='card-header bg-secondary text-white'>
+        <h5>Order Summary</h5>
+      </div>
+      <ul class='list-group list-group-flush'>
+        {% for item in items %}
+        <li class='list-group-item d-flex justify-content-between'>
+          <span>{{ item.title }} <small class='text-muted'>&times; {{ item.qty }}</small></span>
+          <strong>{{ item.subtotal }}</strong>
+        </li>
+        {% endfor %}
+        <li class='list-group-item d-flex justify-content-between bg-light fw-bold'>
+          <span>Total</span><span>{{ total }}</span>
+        </li>
+      </ul>
+    </div>
+    <a href='{% url "cart_view" %}' class='btn btn-outline-secondary mt-2 w-100'>Edit Cart</a>
   </div>
-  <a href='{% url "cart_view" %}' class='btn btn-outline-secondary mt-2 w-100'>&#8592; Edit Cart</a>
- </div>
 </div>
 {% endblock %}
