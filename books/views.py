@@ -1,4 +1,4 @@
-"""books/views.py - CRUD views for Django BookShop."""
+#books/views.py - CRUD views for Django BookShop.
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q, Sum
@@ -12,7 +12,6 @@ FORM_ERROR_MESSAGE = "Please correct the errors below."
 
 
 def book_list(request):
-    """Show all books with recommended section."""
     query = request.GET.get("q", "").strip()
     genre_filter = request.GET.get("genre", "")
     books = Book.objects.all()
@@ -44,14 +43,12 @@ def book_list(request):
 
 
 def book_detail(request, pk):
-    """Show full details of one book."""
     book = get_object_or_404(Book, pk=pk)
     return render(request, "books/book_detail.html", {"book": book})
 
 
 @staff_member_required
 def book_create(request):
-    """Add a new book."""
     if request.method == "POST":
         form = BookForm(request.POST)
         if form.is_valid():
@@ -66,7 +63,6 @@ def book_create(request):
 
 @staff_member_required
 def book_update(request, pk):
-    """Edit an existing book."""
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
         form = BookForm(request.POST, instance=book)
@@ -82,7 +78,6 @@ def book_update(request, pk):
 
 @staff_member_required
 def book_delete(request, pk):
-    """Delete a book."""
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
         title = book.title
@@ -93,7 +88,6 @@ def book_delete(request, pk):
 
 
 def register(request):
-    """User registration view."""
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -106,12 +100,8 @@ def register(request):
     return render(request, "registration/register.html", {"form": form})
 
 
-# ---------------------------------------------------------------------------
-# Helper: resolve delivery address from order/checkout form
-# ---------------------------------------------------------------------------
 
 def _resolve_delivery_address(form, user):
-    """Return delivery address string from saved or new address."""
     saved_id = form.cleaned_data.get("saved_address")
     if saved_id:
         addr_obj = get_object_or_404(Address, pk=saved_id, user=user)
@@ -120,7 +110,6 @@ def _resolve_delivery_address(form, user):
 
 
 def _maybe_save_address(form, user, delivery_address):
-    """Save a new address if the user opted in."""
     if not (form.cleaned_data.get("save_address") and delivery_address):
         return
     if form.cleaned_data.get("is_default_new"):
@@ -135,12 +124,9 @@ def _maybe_save_address(form, user, delivery_address):
     )
 
 
-# ---------------------------------------------------------------------------
-# book_order (was L136, complexity 24 → now split into helpers)
-# ---------------------------------------------------------------------------
+
 
 def _create_book_order(request, book, form):
-    """Handle validated book order: stock check, create order, update stock."""
     quantity = form.cleaned_data["quantity"]
     if quantity > book.stock:
         messages.error(request, f"Only {book.stock} copies available.")
@@ -172,7 +158,6 @@ def _create_book_order(request, book, form):
 
 @login_required
 def book_order(request, pk):
-    """Place an order for a book."""
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
         form = OrderForm(request.POST, user=request.user)
@@ -189,7 +174,6 @@ def book_order(request, pk):
 
 @login_required
 def cart_add(request, pk):
-    """Add a book to the session cart."""
     book = get_object_or_404(Book, pk=pk)
     cart = request.session.get("cart", {})
     book_id = str(pk)
@@ -201,7 +185,6 @@ def cart_add(request, pk):
 
 @login_required
 def cart_view(request):
-    """Display the current session cart."""
     cart = request.session.get("cart", {})
     items = []
     total = 0
@@ -224,7 +207,6 @@ def cart_view(request):
 
 @login_required
 def cart_remove(request, pk):
-    """Remove a book from the session cart."""
     cart = request.session.get("cart", {})
     cart.pop(str(pk), None)
     request.session["cart"] = cart
@@ -233,17 +215,13 @@ def cart_remove(request, pk):
 
 @login_required
 def order_history(request):
-    """Show all past orders for the logged-in user."""
     orders = Order.objects.filter(user=request.user).order_by("-created_at")
     return render(request, "books/order_history.html", {"orders": orders})
 
 
-# ---------------------------------------------------------------------------
-# Helper: checkout (was L269, complexity 27 → now split into helpers)
-# ---------------------------------------------------------------------------
+
 
 def _build_cart_items(cart):
-    """Return (items list, total) from session cart."""
     items = []
     total = 0
     for book_id, qty in cart.items():
@@ -260,7 +238,6 @@ def _build_cart_items(cart):
 
 
 def _check_stock(cart):
-    """Return (book, qty) for the first out-of-stock item, or None if all ok."""
     for book_id, qty in cart.items():
         book = get_object_or_404(Book, pk=int(book_id))
         if qty > book.stock:
@@ -269,7 +246,6 @@ def _check_stock(cart):
 
 
 def _create_checkout_orders(request, cart, form, delivery_address):
-    """Create orders for every item in the cart and decrement stock."""
     for book_id, qty in cart.items():
         book = get_object_or_404(Book, pk=int(book_id))
         Order.objects.create(
@@ -292,7 +268,6 @@ def _create_checkout_orders(request, cart, form, delivery_address):
 
 
 def _process_checkout_form(request, cart, form):
-    """Handle a valid checkout POST: resolve address, stock check, create orders."""
     delivery_address = _resolve_delivery_address(form, request.user)
     if not form.cleaned_data.get("saved_address"):
         if form.cleaned_data.get("save_address") and delivery_address:
@@ -319,7 +294,6 @@ def _process_checkout_form(request, cart, form):
 
 @login_required
 def checkout(request):
-    """Process cart checkout and create orders."""
     cart = request.session.get("cart", {})
     if not cart:
         messages.error(request, "Your cart is empty.")
@@ -348,7 +322,6 @@ def checkout(request):
 
 @login_required
 def address_list(request):
-    """Show and manage saved addresses."""
     addresses = Address.objects.filter(user=request.user)
     form = AddressForm()
     if request.method == "POST":
@@ -369,7 +342,6 @@ def address_list(request):
 
 @login_required
 def address_delete(request, pk):
-    """Delete a saved address."""
     address = get_object_or_404(Address, pk=pk, user=request.user)
     if request.method == "POST":
         address.delete()
@@ -379,7 +351,6 @@ def address_delete(request, pk):
 
 @login_required
 def address_set_default(request, pk):
-    """Set an address as the default."""
     address = get_object_or_404(Address, pk=pk, user=request.user)
     Address.objects.filter(user=request.user).update(is_default=False)
     address.is_default = True

@@ -1,4 +1,4 @@
-"""Admin configuration for the books app."""
+#Admin configuration for the books app.
 from django.contrib import admin
 from .models import Book, Order, OrderItem
 

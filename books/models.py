@@ -1,4 +1,4 @@
-"""Database models for books and orders."""
+# Database models for books and orders.
 # Book database model with validation constraints
 from django.contrib.auth.models import User
 from django.db import models
@@ -7,7 +7,6 @@ from django.utils import timezone
 
 
 class Book(models.Model):
-    """A book available in the bookshop."""
 
     GENRE_CHOICES = [
         ('fiction', 'Fiction'),
@@ -71,7 +70,6 @@ class Book(models.Model):
 
 
 class Address(models.Model):
-    """A saved delivery address for a user."""
 
     user = models.ForeignKey(
         User,
@@ -113,7 +111,6 @@ class Address(models.Model):
 
 
 class Order(models.Model):
-    """A customer order, always linked to a registered user."""
 
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -156,7 +153,6 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    """A single book line item within an order."""
 
     order = models.ForeignKey(
         Order,

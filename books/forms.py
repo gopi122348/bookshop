@@ -1,4 +1,4 @@
-"""Forms for books and orders."""
+#Forms for books and orders.
 
 import re
 from django import forms
@@ -187,7 +187,6 @@ class CheckoutForm(forms.Form):
 
 
 class OrderForm(forms.Form):
-    """Form for placing a single-book order with address selection."""
 
     saved_address = forms.ChoiceField(
         required=False,

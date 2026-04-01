@@ -1,3 +1,3 @@
-"""Books app package."""
+#Books app package.
 print("Books package initialized")
 
